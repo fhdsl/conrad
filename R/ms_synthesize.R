@@ -80,9 +80,9 @@ ms_synthesize = function(script,
 #' @export
 ms_tts_url = function(region = "westus") {
   region = ms_region(region)
-  synth_url <- paste0("https://", region,
+  tts_url <- paste0("https://", region,
                       ".tts.speech.microsoft.com/",
                       "cognitiveservices/v1")
-  synth_url
+  tts_url
 }
 
