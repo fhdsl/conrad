@@ -35,24 +35,22 @@ devtools::install_github("howardbaek/mscstts2")
 
 ## Getting an API key
 
-To get an API key, sign in to [Azure Cognitive Services](https://azure.microsoft.com/en-us/free/cognitive-services/). 
-
-1. Sign in/Create an Azure account.
+1. Sign in/Create an Azure account on [Azure Cognitive Services](https://azure.microsoft.com/en-us/free/cognitive-services/).
 2. Click `+ Create a Resource`
 3. Search for "Speech" and Click `Create` -> `Speech`
 4. Create a "Resource group" (description provided on website) and "Name"
-5. Choose Pricing tier (you can choose the free version with `Free F0`)
+5. Choose `Pricing tier` (you can choose the free version with `Free F0`)
 6. Click `Review + create`, review the Terms, and click `Create`.  
 
-If the deployment was successful, you should see "Your deployment is complete" on the next page.
+If the deployment was successful, you should see :white_check_mark: **Your deployment is complete** on the next page.
 
-7. Under "Next steps", click "Go to resource"
-8. Look on the left sidebar and under "Resource Management", click "Keys and Endpoint"
-9. Copy either Key 1 or Key 2 to clipboard. Only one key is necessary to make an API call.
+7. Under `Next steps`, click `Go to resource`
+8. Look on the left sidebar and under `Resource Management`, click `Keys and Endpoint`
+9. Copy either `KEY 1` or `KEY 2` to clipboard. Only one key is necessary to make an API call.
 
 Once you complete these steps, you have successfully retrieved your API keys to access the API. 
 
-On this page, jot down your Location/Region, which you use to make calls to the API. Using a different region from the one your API key is linked with will return errors when you make calls to the API.
+On this page, jot down your `Location/Region`, which you use to make calls to the API. Using a different region from the one your API key is linked with will return errors when you make calls to the API.
 
 
 ## Setting your API key
@@ -98,5 +96,17 @@ ms_get_token()
 ```
 
 
+## Major differences to mscstts
 
-You'll still need to render `README.Rmd` regularly, to keep `README.md` up-to-date. `devtools::build_readme()` is handy for this. You could also use GitHub Actions to re-render `README.Rmd` every time you push. An example workflow can be found here: <https://github.com/r-lib/actions/tree/v1/examples>.
+TODO: Elaborate on these differences
+
+- httr -> httr2
+- Improved documentation
+- Fixed HTTP 403 error
+
+
+## Acknowledgements
+
+mscstts2 wouldn't be possible without mscstts, created by John Muschelli and httr2, created by Hadley Wickham.
+
+- 
