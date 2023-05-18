@@ -6,17 +6,17 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
+*mscstts2 is a reboot of
+[mscstts](https://github.com/muschellij2/mscstts). Now that
+[httr](https://httr.r-lib.org/#status) is superseded, we created
+mscstts2, which uses [httr2](https://httr2.r-lib.org/) to perform HTTP
+requests to the Microsoft Cognitive Services Text to Speech REST API.*
+
 mscstts2 is a client to the Microsoft Cognitive Services Text to Speech
 REST API. The Text to Speech REST API supports neural text to speech
 voices, which support specific languages and dialects that are
 identified by locale. Each available endpoint is associated with a
 region.
-
-mscstts2 is a second version of
-[mscstts](https://github.com/muschellij2/mscstts). Now that
-[httr](https://httr.r-lib.org/#status) is superseded, we created
-mscstts2, which uses [httr2](https://httr2.r-lib.org/) to perform HTTP
-requests to the Microsoft Cognitive Services Text to Speech REST API.
 
 Before you use the text to speech REST API, a valid account must be
 registered at the [Microsoft Cognitive Services
