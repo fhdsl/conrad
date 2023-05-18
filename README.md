@@ -96,9 +96,9 @@ ms_list_voice()
 to speech. The endpoint requires Speech Synthesis Markup Language (SSML)
 to specify the language, gender, and full voice name.
 
-Be sure to select the endpoint that matches your Speech resource region.
-
 TODO: Warn users of HTTP 403 Forbidden Error :warning:
+
+Be sure to select the endpoint that matches your Speech resource region.
 
 ``` r
 ms_synthesize()

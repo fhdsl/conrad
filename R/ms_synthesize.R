@@ -13,7 +13,7 @@ ms_synthesize = function(script,
                                            "audio-24khz-160kbitrate-mono-mp3", "audio-24khz-96kbitrate-mono-mp3",
                                            "audio-24khz-48kbitrate-mono-mp3"),
                          escape = FALSE,
-                         region = NULL,
+                         region = "westus",
                          ...) {
   region <- ms_region(region)
   output_format <- match.arg(output_format)
@@ -56,24 +56,13 @@ ms_synthesize = function(script,
                        `Host` = paste0(region, ".", "tts.speech.microsoft.com")) %>%
     httr2::req_body_raw(ssml)
   # Perform a request and fetch the response
-  resp <- req %>% httr2::req_perform()
+  resp <- req %>%
+    httr2::req_perform()
+  # Binary response
+  out <- resp$body
 
-  # # Transfer binary data to WAV file
-  # output <- tempfile(fileext = ".wav")
-  # writeBin(resp$body, con = output)
-  #
-  # class(token) = "token"
-  #
-  # L = list(
-  #   request = res,
-  #   ssml = ssml,
-  #   content = out,
-  #   token = token,
-  #   output_format = output_format
-  # )
-  # return(L)
+  out
 }
-
 
 #' Create Text To Speech Endpoint
 #' @rdname ms_synthesize
