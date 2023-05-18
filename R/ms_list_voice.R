@@ -1,9 +1,10 @@
 #' Get List of Voices for Specified Region
 #'
 #' @param api_key Microsoft Cognitive Services API key
-#' @param region Subscription region for your key.
-#' @param token An authentication token
-#' See \url{https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/overview}
+#' @param region Subscription region for your key. For more info, see
+#' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
+#' @param token An authentication token. For more info, see
+#' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/Speech-Service/rest-text-to-speech?tabs=streaming#authentication}
 #' @param ... Additional arguments to send to \code{\link{GET}}
 #' @return A \code{data.frame} of the names and their long names.
 #' @export

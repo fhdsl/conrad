@@ -9,8 +9,8 @@
 #' \code{api_key = Sys.getenv('MS_TTS_API_KEY")}, or
 #' \code{api_key = Sys.getenv('MS_TTS_API_KEY1")}, or
 #' \code{api_key = Sys.getenv('MS_TTS_API_KEY2")}
-#' @param region Subscription region for your key. For more info, see
-#' \url{https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/overview}
+#' @param region Subscription region for your API key. For more info, see
+#' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
 #' @return API key
 #' @export
 #' @examples
@@ -42,13 +42,13 @@ ms_fetch_key <- function(api_key = NULL,
                 "accessed by Sys.getenv('MS_TTS_API_KEY')"))
   }
 
-  return(api_key)
+  api_key
 }
 
 #' @describeIn ms_fetch_key Does user have API Key?
 #' @export
 ms_exist_key <- function(api_key = NULL) {
-  api_key = ms_fetch_key(api_key = api_key, error = FALSE)
+  api_key <- ms_fetch_key(api_key = api_key, error = FALSE)
   !is.null(api_key)
 }
 
@@ -80,10 +80,9 @@ ms_valid_key <- function(api_key = NULL, region = mscstts2::region) {
 #' Services Token from API Key
 #'
 #' @param api_key Microsoft Cognitive Services API key
-#' @param region Subscription region for your key.
-#' See
-#' \url{https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/overview#reference-docs}
-#' @return A list of the request, and token
+#' @param region Subscription region for your API key.For more info, see
+#' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
+#' @return A list of the request and token
 #' @export
 #'
 #' @examples
