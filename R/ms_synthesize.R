@@ -50,7 +50,7 @@ ms_synthesize = function(script,
   # Specify HTTP headers
   req <- req %>%
     httr2::req_headers(`Content-Type` = "application/ssml+xml",
-                       `X-Microsoft-OutputFormat` = "riff-24khz-16bit-mono-pcm",
+                       `X-Microsoft-OutputFormat` = output_format,
                        `Authorization` = paste("Bearer",  as.character(token)),
                        `User-Agent` = "MyTextToSpeechApp",
                        `Host` = paste0(region, ".", "tts.speech.microsoft.com")) %>%
