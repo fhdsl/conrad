@@ -3,15 +3,15 @@
 \name{ms_set_region}
 \alias{ms_set_region}
 \alias{ms_synthesize}
-\alias{ms_synthesize_api_url}
+\alias{ms_tts_url}
 \title{Convert Text to Speech by using Speech Synthesis Markup Language (SSML)}
 \usage{
 ms_set_region(region = mscstts2::region)
 
 ms_synthesize(
   script,
-  token = NULL,
   api_key = NULL,
+  token = NULL,
   gender = c("Female", "Male"),
   language = "en-US",
   voice = NULL,
@@ -23,18 +23,13 @@ ms_synthesize(
     "audio-24khz-96kbitrate-mono-mp3", "audio-24khz-48kbitrate-mono-mp3"),
   escape = FALSE,
   region = NULL,
-  api = c("tts", "bing"),
   ...
 )
 
-ms_synthesize_api_url(api = c("tts", "bing"), region = NULL)
-}
-\arguments{
-\item{api}{Chose API to authorize on (\code{tts} for text to speech or
-\code{bing} for Bing text to speech API)}
+ms_tts_url(region = "westus")
 }
 \description{
 Convert Text to Speech by using Speech Synthesis Markup Language (SSML)
 
-Create URL Endpoint that allows you to convert text to speech
+Create Text To Speech Endpoint
 }

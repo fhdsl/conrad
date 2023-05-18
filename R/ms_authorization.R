@@ -71,9 +71,9 @@ ms_valid_key <- function(api_key = NULL, region = mscstts2::region) {
   if (inherits(res, "try-error")) {
     return(FALSE)
   }
-  res <- res$request
-  # TODO: Check if httr2::resp_status() gives response code
-  return(httr2::resp_status(res) < 400)
+  resp <- res$response
+
+  httr2::resp_status(resp) < 400
 }
 
 #' Get Microsoft Text To Speech (TTS) or Cognitive
@@ -85,7 +85,6 @@ ms_valid_key <- function(api_key = NULL, region = mscstts2::region) {
 #' \url{https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/overview#reference-docs}
 #' @return A list of the request, and token
 #' @export
-#' @importFrom httr POST add_headers stop_for_status content content_type
 #'
 #' @examples
 #' if (ms_valid_key()) {
@@ -121,7 +120,9 @@ ms_get_token <- function(api_key = NULL,
   # Token class
   class(base64_token) <- "token"
 
-  list(request = req, token = base64_token)
+  list(request = req,
+       response = resp,
+       token = base64_token)
 }
 
 

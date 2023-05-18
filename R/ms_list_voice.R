@@ -1,4 +1,4 @@
-#' Get Full List of Voices for Specified Region
+#' Get List of Voices for Specified Region
 #'
 #' @param api_key Microsoft Cognitive Services API key
 #' @param region Subscription region for your key.

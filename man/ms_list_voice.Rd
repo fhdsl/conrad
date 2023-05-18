@@ -4,17 +4,17 @@
 \alias{ms_list_voice}
 \title{Get Full List of Voices for Specified Region}
 \usage{
-ms_list_voice(api_key = NULL, region = NULL, token = NULL, ...)
+ms_list_voice(api_key = NULL, region = NULL, ...)
 }
 \arguments{
 \item{api_key}{Microsoft Cognitive Services API key}
 
 \item{region}{Subscription region for your key.}
 
+\item{...}{Additional arguments to send to \code{\link{GET}}}
+
 \item{token}{An authentication token
 See \url{https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/overview}}
-
-\item{...}{Additional arguments to send to \code{\link{GET}}}
 }
 \value{
 A \code{data.frame} of the names and their long names.
