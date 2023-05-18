@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-*mscstts2 is a reboot of [mscstts](https://github.com/muschellij2/mscstts). Now that [httr](https://httr.r-lib.org/#status) is superseded, we created mscstts2, which uses [httr2](https://httr2.r-lib.org/) to perform HTTP requests to the Microsoft Cognitive Services Text to Speech REST API.*
+:exclamation: *mscstts2 is a reboot of [mscstts](https://github.com/muschellij2/mscstts). Now that [httr](https://httr.r-lib.org/#status) is superseded, we created mscstts2, which uses [httr2](https://httr2.r-lib.org/) to perform HTTP requests to the Microsoft Cognitive Services Text to Speech REST API.*
 
 mscstts2 is a client to the Microsoft Cognitive Services Text to Speech REST API. The Text to Speech REST API supports neural text to speech voices, which support specific languages and dialects that are identified by locale. Each available endpoint is associated with a region.
 
@@ -50,7 +50,9 @@ If the deployment was successful, you should see :white_check_mark: **Your deplo
 
 Once you complete these steps, you have successfully retrieved your API keys to access the API. 
 
-On this page, jot down your `Location/Region`, which you use to make calls to the API. Using a different region from the one your API key is linked with will return errors when you make calls to the API.
+On this page, jot down your `Location/Region`, which you use to make calls to the API. 
+
+:warning: Using a different region from the region of your API key will lead to errors when you make calls to the API.
 
 
 ## Setting your API key
@@ -79,7 +81,7 @@ ms_list_voice()
 
 Be sure to select the endpoint that matches your Speech resource region.
 
-TODO: Warn users of HTTP 403 Forbidden Error
+TODO: Warn users of HTTP 403 Forbidden Error :warning:
 
 ```{r, eval = FALSE}
 ms_synthesize()
@@ -107,6 +109,4 @@ TODO: Elaborate on these differences
 
 ## Acknowledgements
 
-mscstts2 wouldn't be possible without mscstts, created by John Muschelli and httr2, created by Hadley Wickham.
-
-- 
+mscstts2 wouldn't be possible without mscstts by [John Muschelli](https://github.com/muschellij2) and httr2 by [Hadley Wickham](https://github.com/hadley).
