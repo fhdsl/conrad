@@ -6,13 +6,17 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-TODO: Mention something about mscstts2 being a rewrite of mscstts.
-
 mscstts2 is a client to the Microsoft Cognitive Services Text to Speech
 REST API. The Text to Speech REST API supports neural text to speech
 voices, which support specific languages and dialects that are
 identified by locale. Each available endpoint is associated with a
 region.
+
+mscstts2 is a second version of
+[mscstts](https://github.com/muschellij2/mscstts). Now that
+[httr](https://httr.r-lib.org/#status) is superseded, we created
+mscstts2, which uses [httr2](https://httr2.r-lib.org/) to perform HTTP
+requests to the Microsoft Cognitive Services Text to Speech REST API.
 
 Before you use the text to speech REST API, a valid account must be
 registered at the [Microsoft Cognitive Services
@@ -32,20 +36,32 @@ devtools::install_github("howardbaek/mscstts2")
 
 ## Getting an API key
 
-You can get a TTS API key here:
-<https://azure.microsoft.com/en-us/free/cognitive-services/>. The API
-you need to get one from is Cognitive Services, Speech.
+To get an API key, sign in to [Azure Cognitive
+Services](https://azure.microsoft.com/en-us/free/cognitive-services/).
 
-1.  Create an Azure account
-2.  Go to
-    <https://portal.azure.com/#create/Microsoft.CognitiveServicesSpeechServices>.
-    If that works, skip to step 5.
-3.  Go to <https://portal.azure.com/#home>
-4.  Click `+ Create a Resource`
-5.  Search “Speech”
-6.  Hit `+ Create`
-7.  Should be able to create an F0 account (which is free - see below)
-    if you hit the pricing tiers
+1.  Sign in/Create an Azure account.
+2.  Click `+ Create a Resource`
+3.  Search for “Speech” and Click `Create` -\> `Speech`
+4.  Create a “Resource group” (description provided on website) and
+    “Name”
+5.  Choose Pricing tier (you can choose the free version with `Free F0`)
+6.  Click `Review + create`, review the Terms, and click `Create`.
+
+If the deployment was successful, you should see “Your deployment is
+complete” on the next page.
+
+7.  Under “Next steps”, click “Go to resource”
+8.  Look on the left sidebar and under “Resource Management”, click
+    “Keys and Endpoint”
+9.  Copy either Key 1 or Key 2 to clipboard. Only one key is necessary
+    to make an API call.
+
+Once you complete these steps, you have successfully retrieved your API
+keys to access the API.
+
+On this page, jot down your Location/Region, which you use to make calls
+to the API. Using a different region from the one your API key is linked
+with will return errors when you make calls to the API.
 
 ## Setting your API key
 
