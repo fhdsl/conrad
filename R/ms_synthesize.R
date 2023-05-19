@@ -10,7 +10,7 @@
 #' @param voice Full voice name
 #' @param escape Should non-standard characters be substituted?
 #'
-#' @return A response in binary format
+#' @return An HTTP response in hexadecimal representation of binary data
 #' @export
 ms_synthesize = function(script,
                          region = "westus",
