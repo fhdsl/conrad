@@ -151,8 +151,9 @@ ms_get_token(api_key = "YOUR_API_KEY", region = "westus")
   request.
 - We have made significant improvements to the documentation across the
   entire package. These enhancements include simpler function names,
-  commented functions for clarity, and URLs directing users to pages
-  that explain text-to-speech jargon.
+  commented functions for clarity, removal of unnecessary functions and
+  arguments, and URLs directing users to pages that explain
+  text-to-speech jargon.
 
 We believe that these improvements will greatly enhance the usability of
 the package and make it even more reliable in the long-term.

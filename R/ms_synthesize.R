@@ -8,7 +8,6 @@
 #' @param gender Sex of the speaker
 #' @param language Language to be spoken
 #' @param voice Full voice name
-#' @param output_format Format of output
 #' @param escape Should non-standard characters be substituted?
 #'
 #' @return A response in binary format
@@ -20,16 +19,8 @@ ms_synthesize = function(script,
                          gender = c("Female", "Male"),
                          language = "en-US",
                          voice = NULL,
-                         output_format = c("raw-16khz-16bit-mono-pcm", "raw-8khz-8bit-mono-mulaw",
-                                           "riff-8khz-8bit-mono-alaw", "riff-8khz-8bit-mono-mulaw",
-                                           "riff-16khz-16bit-mono-pcm", "audio-16khz-128kbitrate-mono-mp3",
-                                           "audio-16khz-64kbitrate-mono-mp3", "audio-16khz-32kbitrate-mono-mp3",
-                                           "raw-24khz-16bit-mono-pcm", "riff-24khz-16bit-mono-pcm",
-                                           "audio-24khz-160kbitrate-mono-mp3", "audio-24khz-96kbitrate-mono-mp3",
-                                           "audio-24khz-48kbitrate-mono-mp3"),
                          escape = FALSE) {
   region <- ms_region(region)
-  output_format <- match.arg(output_format)
   gender <- match.arg(gender)
 
   if (!is.null(voice)) {
@@ -62,7 +53,7 @@ ms_synthesize = function(script,
   # Specify HTTP headers
   req <- req %>%
     httr2::req_headers(`Content-Type` = "application/ssml+xml",
-                       `X-Microsoft-OutputFormat` = output_format,
+                       `X-Microsoft-OutputFormat` = "riff-24khz-16bit-mono-pcm",
                        `Authorization` = paste("Bearer",  as.character(token)),
                        `User-Agent` = "MyTextToSpeechApp",
                        `Host` = paste0(region, ".", "tts.speech.microsoft.com")) %>%
@@ -82,8 +73,8 @@ ms_synthesize = function(script,
 ms_tts_url = function(region = "westus") {
   region = ms_region(region)
   tts_url <- paste0("https://", region,
-                      ".tts.speech.microsoft.com/",
-                      "cognitiveservices/v1")
+                    ".tts.speech.microsoft.com/",
+                    "cognitiveservices/v1")
   tts_url
 }
 
