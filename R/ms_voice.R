@@ -1,4 +1,12 @@
-# When voice is provided in ms_synthesize()
+#' Check if provided voice is supported in region
+#'
+#' @param voice Full voice name
+#' @param api_key Microsoft Azure Cognitive Services API key
+#' @param region Subscription region for API key. For more info, see
+#' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
+#'
+#' @return List of gender, language, and full voice name
+#' @export
 ms_use_voice <- function(voice,
                          api_key = NULL,
                          region = "westus") {
@@ -21,12 +29,20 @@ ms_use_voice <- function(voice,
   res
 }
 
-# When voice is NOT provided in ms_synthesize()
+#' Provide default voice when not provided
+#'
+#' @param api_key Microsoft Azure Cognitive Services API key
+#' @param gender Sex of speaker
+#' @param language Language to be spoken
+#' @param region Subscription region for API key. For more info, see
+#' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
+#'
+#' @return List of gender, language, and full voice name
+#' @export
 ms_choose_voice <- function(api_key = NULL,
                             gender = c("Female", "Male"),
                             language =  "en-US",
-                            region = "westus",
-                            token = NULL) {
+                            region = "westus") {
   stopifnot(is.character(language) & is.character(gender))
   gender <- match.arg(gender)
 

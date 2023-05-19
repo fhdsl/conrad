@@ -1,5 +1,22 @@
 #' Convert Text to Speech by using Speech Synthesis Markup Language (SSML)
+#'
+#' @param script A character vector of text to be converted to speech
+#' @param region Subscription region for API key. For more info, see
+#' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
+#' @param api_key Microsoft Azure Cognitive Services API key
+#' @param token An authentication token
+#' @param gender Sex of the speaker
+#' @param language Language to be spoken
+#' @param voice Full voice name
+#' @param output_format Format of output
+#' @param escape Should non-standard characters be substituted?
+#'
+#' @return A response in binary format
+#' @export
+#'
+#' @examples
 ms_synthesize = function(script,
+                         region = "westus",
                          api_key = NULL,
                          token = NULL,
                          gender = c("Female", "Male"),
@@ -12,9 +29,7 @@ ms_synthesize = function(script,
                                            "raw-24khz-16bit-mono-pcm", "riff-24khz-16bit-mono-pcm",
                                            "audio-24khz-160kbitrate-mono-mp3", "audio-24khz-96kbitrate-mono-mp3",
                                            "audio-24khz-48kbitrate-mono-mp3"),
-                         escape = FALSE,
-                         region = "westus",
-                         ...) {
+                         escape = FALSE) {
   region <- ms_region(region)
   output_format <- match.arg(output_format)
   gender <- match.arg(gender)

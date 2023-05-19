@@ -12,8 +12,8 @@
 recommended, we use [httr2](https://httr2.r-lib.org/) to perform HTTP
 requests to the Microsoft Cognitive Services Text to Speech REST API.*
 
-mscstts2 is a client to the [Microsoft Cognitive Services Text to Speech
-REST
+mscstts2 serves as a client to the [Microsoft Cognitive Services Text to
+Speech REST
 API](https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-text-to-speech?tabs=streaming).
 The Text to Speech REST API supports neural text to speech voices, which
 support specific languages and dialects that are identified by locale.

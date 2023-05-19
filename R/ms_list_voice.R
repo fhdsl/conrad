@@ -1,7 +1,7 @@
 #' Get List of Voices for Specified Region
 #'
-#' @param api_key Microsoft Cognitive Services API key
-#' @param region Subscription region for your key. For more info, see
+#' @param api_key Microsoft Azure Cognitive Services API key
+#' @param region Subscription region for API key. For more info, see
 #' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
 #' @param token An authentication token. For more info, see
 #' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/Speech-Service/rest-text-to-speech?tabs=streaming#authentication}

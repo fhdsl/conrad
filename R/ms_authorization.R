@@ -1,16 +1,19 @@
-#' @title Find API Key for Microsoft Cognitive Services Text To Speech (TTS)
-#' @description Determines if \code{option(ms_tts_key)} is set or key is
-#' stored in an environment variable (MS_TTS_API_KEY, MS_TTS_API_KEY1, MS_TTS_API_KEY2)
-#' If not found, stops and returns an error. If found, returns the value.
+#' Find API Key for Microsoft Cognitive Services Text To Speech (TTS)
+#'
+#' Determines if \code{option(ms_tts_key)} is set or key is stored in an
+#' environment variable (MS_TTS_API_KEY, MS_TTS_API_KEY1, MS_TTS_API_KEY2). If
+#' not found, stops and returns an error. If found, returns the value.
+#'
 #' @param api_key Microsoft Cognitive Services API key
 #' @param error Should the function error if \code{api_key = NULL}?
-#' @note You can either set the API key using
-#' \code{option(ms_tts_key)} or have it accessible by
-#' \code{api_key = Sys.getenv('MS_TTS_API_KEY")}, or
-#' \code{api_key = Sys.getenv('MS_TTS_API_KEY1")}, or
-#' \code{api_key = Sys.getenv('MS_TTS_API_KEY2")}
-#' @param region Subscription region for your API key. For more info, see
-#' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
+#' @param region Subscription region for API key. For more info, see
+#'   \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
+#'
+#' @note You can either set the API key using \code{option(ms_tts_key)} or have
+#'   it accessible by \code{api_key = Sys.getenv('MS_TTS_API_KEY")}, or
+#'   \code{api_key = Sys.getenv('MS_TTS_API_KEY1")}, or \code{api_key =
+#'   Sys.getenv('MS_TTS_API_KEY2")}
+#'
 #' @return API key
 #' @export
 #' @examples
@@ -76,12 +79,11 @@ ms_valid_key <- function(api_key = NULL, region = mscstts2::region) {
   httr2::resp_status(resp) < 400
 }
 
-#' Get Microsoft Text To Speech (TTS) or Cognitive
-#' Services Token from API Key
+#' Get Microsoft Text To Speech (TTS) or Cognitive Services Token from API Key
 #'
-#' @param api_key Microsoft Cognitive Services API key
-#' @param region Subscription region for your API key.For more info, see
-#' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
+#' @param api_key Microsoft Azure Cognitive Services API key
+#' @param region Subscription region for API key. For more info, see
+#'   \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
 #' @return A list of the request and token
 #' @export
 #'
@@ -126,6 +128,10 @@ ms_get_token <- function(api_key = NULL,
 
 
 #' Create issueToken URL Endpoint to get access token
+#'
+#' @param region Subscription region for API key. For more info, see
+#' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
+#'
 #' @rdname ms_get_token
 #' @export
 ms_token_url <- function(region = mscstts2::region) {
@@ -143,10 +149,13 @@ ms_token_url <- function(region = mscstts2::region) {
   return(token_url)
 }
 
+
 #' Check if token has expired
-#' @rdname ms_get_token
+
 #' @param token An authentication of class \code{token},
 #' likely from \code{\link{ms_get_token}}
+#'
+#' @rdname ms_get_token
 #' @export
 ms_token_expired <- function(token = NULL) {
   if (!inherits(token, "token")) {

@@ -20,16 +20,16 @@ ms_valid_key(api_key = NULL, region = mscstts2::region)
 
 \item{error}{Should the function error if \code{api_key = NULL}?}
 
-\item{region}{Subscription region for your key. For more info, see
-\url{https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/overview}}
+\item{region}{Subscription region for API key. For more info, see
+\url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}}
 }
 \value{
 API key
 }
 \description{
-Determines if \code{option(ms_tts_key)} is set or key is
-stored in an environment variable (MS_TTS_API_KEY, MS_TTS_API_KEY1, MS_TTS_API_KEY2)
-If not found, stops and returns an error. If found, returns the value.
+Determines if \code{option(ms_tts_key)} is set or key is stored in an
+environment variable (MS_TTS_API_KEY, MS_TTS_API_KEY1, MS_TTS_API_KEY2). If
+not found, stops and returns an error. If found, returns the value.
 }
 \section{Functions}{
 \itemize{
@@ -41,11 +41,10 @@ If not found, stops and returns an error. If found, returns the value.
 
 }}
 \note{
-You can either set the API key using
-\code{option(ms_tts_key)} or have it accessible by
-\code{api_key = Sys.getenv('MS_TTS_API_KEY")}, or
-\code{api_key = Sys.getenv('MS_TTS_API_KEY1")}, or
-\code{api_key = Sys.getenv('MS_TTS_API_KEY2")}
+You can either set the API key using \code{option(ms_tts_key)} or have
+it accessible by \code{api_key = Sys.getenv('MS_TTS_API_KEY")}, or
+\code{api_key = Sys.getenv('MS_TTS_API_KEY1")}, or \code{api_key =
+  Sys.getenv('MS_TTS_API_KEY2")}
 }
 \examples{
 res = ms_fetch_key(api_key = NULL, error = FALSE)

@@ -2,23 +2,24 @@
 % Please edit documentation in R/ms_list_voice.R
 \name{ms_list_voice}
 \alias{ms_list_voice}
-\title{Get Full List of Voices for Specified Region}
+\title{Get List of Voices for Specified Region}
 \usage{
 ms_list_voice(api_key = NULL, region = NULL, ...)
 }
 \arguments{
-\item{api_key}{Microsoft Cognitive Services API key}
+\item{api_key}{Microsoft Azure Cognitive Services API key}
 
-\item{region}{Subscription region for your key.}
+\item{region}{Subscription region for API key. For more info, see
+\url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}}
 
 \item{...}{Additional arguments to send to \code{\link{GET}}}
 
-\item{token}{An authentication token
-See \url{https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/overview}}
+\item{token}{An authentication token. For more info, see
+\url{https://learn.microsoft.com/en-us/azure/cognitive-services/Speech-Service/rest-text-to-speech?tabs=streaming#authentication}}
 }
 \value{
 A \code{data.frame} of the names and their long names.
 }
 \description{
-Get Full List of Voices for Specified Region
+Get List of Voices for Specified Region
 }

@@ -4,8 +4,7 @@
 \alias{ms_get_token}
 \alias{ms_token_url}
 \alias{ms_token_expired}
-\title{Get Microsoft Text To Speech (TTS) or Cognitive
-Services Token from API Key}
+\title{Get Microsoft Text To Speech (TTS) or Cognitive Services Token from API Key}
 \usage{
 ms_get_token(api_key = NULL, region = mscstts2::region)
 
@@ -14,21 +13,19 @@ ms_token_url(region = mscstts2::region)
 ms_token_expired(token = NULL)
 }
 \arguments{
-\item{api_key}{Microsoft Cognitive Services API key}
+\item{api_key}{Microsoft Azure Cognitive Services API key}
 
-\item{region}{Subscription region for your key.
-See
-\url{https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/overview#reference-docs}}
+\item{region}{Subscription region for API key. For more info, see
+\url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}}
 
 \item{token}{An authentication of class \code{token},
 likely from \code{\link{ms_get_token}}}
 }
 \value{
-A list of the request, and token
+A list of the request and token
 }
 \description{
-Get Microsoft Text To Speech (TTS) or Cognitive
-Services Token from API Key
+Get Microsoft Text To Speech (TTS) or Cognitive Services Token from API Key
 
 Create issueToken URL Endpoint to get access token
 
