@@ -127,26 +127,35 @@ ms_get_token(api_key = "YOUR_API_KEY", region = "westus")
 
 ## Major differences to mscstts
 
-- It depends on [httr2](https://httr2.r-lib.org/), instead of
-  [httr](https://httr.r-lib.org/), to perform HTTP requests to the [Text
-  to Speech REST
+- To enhance the reliability of our package, we have transitioned from
+  using [httr](https://httr.r-lib.org/) to
+  [httr2](https://httr2.r-lib.org/) for handling HTTP requests to the
+  [Text to Speech REST
   API](https://learn.microsoft.com/en-us/azure/cognitive-services/Speech-Service/rest-text-to-speech?tabs=streaming).
-  A big reason for making this switch is that
-  [httr](https://httr.r-lib.org/#status) will no longer be actively
-  maintained; only changes necessary to keep it on CRAN will be made.
-  httr2 is a modern reimagining of httr and is recommended for usage.
+  This change was motivated by the fact that
+  [httr](https://httr.r-lib.org/#status) is no longer being actively
+  maintained, with updates limited to those necessary for CRAN
+  compatibility. In contrast, httr2 represents a modern reimagining of
+  httr and is strongly recommended for usage.
 - It resolves the HTTP 403 Forbidden
-  [issue](https://github.com/muschellij2/mscstts/issues/13). An HTTP 403
-  Forbidden response status code indicates that the server understands
-  the request but refuses to authorize it. The reason is that
-  [`mscstts::ms_synthesize()`](https://github.com/muschellij2/mscstts/blob/master/R/ms_synthesize.R)
-  might use an invalid voice (for the specific region) in the HTTP
-  request. For example, for the `westus` region, it was using a voice
-  name that was not supported in that region inside the SSML. This
-  caused the server to reject the HTTP request.  
-- We improved documentation in all areas of the package: simpler
-  function names, commented functions, and URLs to pages explaining
-  text-to-speech terminology on the README.
+  [issue](https://github.com/muschellij2/mscstts/issues/13). The
+  occurrence of an HTTP 403 Forbidden response status code signifies
+  that the server comprehends the request but denies authorization. In
+  the case of
+  [`mscstts::ms_synthesize()`](https://github.com/muschellij2/mscstts/blob/master/R/ms_synthesize.R),
+  the [problem](https://github.com/muschellij2/mscstts/issues/13) arose
+  due to the use of an invalid voice within the HTTP request,
+  specifically concerning the chosen region. For instance, the SSML
+  might have contained a voice name that was not supported in the
+  `westus` region. As a consequence, the server would reject the HTTP
+  request.
+- We have made significant improvements to the documentation across the
+  entire package. These enhancements include simpler function names,
+  commented functions for clarity, and URLs directing users to pages
+  that explain text-to-speech jargon.
+
+We believe that these improvements will greatly enhance the usability of
+the package and make it even more reliable in the long-term.
 
 ## Acknowledgements
 
