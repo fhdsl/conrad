@@ -19,8 +19,7 @@ ms_create_ssml(
 
 \item{gender}{Sex of the Speaker}
 
-\item{language}{Language to be spoken,
-must be from \code{\link{ms_language_codes}}}
+\item{language}{Language to be spoken}
 
 \item{escape}{Should non-standard characters be substituted?  Should not
 be used if \code{script} has SSML tags}

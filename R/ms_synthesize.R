@@ -13,8 +13,6 @@
 #'
 #' @return A response in binary format
 #' @export
-#'
-#' @examples
 ms_synthesize = function(script,
                          region = "westus",
                          api_key = NULL,
@@ -36,7 +34,6 @@ ms_synthesize = function(script,
 
   if (!is.null(voice)) {
     res <- ms_use_voice(voice = voice,
-                        token = token,
                         api_key = api_key,
                         region = region)
   } else {

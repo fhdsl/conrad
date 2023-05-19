@@ -3,14 +3,10 @@
 #' @param api_key Microsoft Azure Cognitive Services API key
 #' @param region Subscription region for API key. For more info, see
 #' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
-#' @param token An authentication token. For more info, see
-#' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/Speech-Service/rest-text-to-speech?tabs=streaming#authentication}
-#' @param ... Additional arguments to send to \code{\link{GET}}
 #' @return A \code{data.frame} of the names and their long names.
 #' @export
 ms_list_voice = function(api_key = NULL,
-                         region = NULL,
-                         ...) {
+                         region = NULL) {
   region <- ms_region(region)
   list_voice_url <- paste0("https://", region,
                      ".tts.speech.microsoft.com/",
