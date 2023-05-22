@@ -6,7 +6,7 @@
 #' @return A \code{data.frame} of the names and their long names.
 #' @export
 ms_list_voice = function(api_key = NULL,
-                         region = NULL) {
+                         region = "westus") {
   region <- ms_region(region)
   list_voice_url <- paste0("https://", region,
                      ".tts.speech.microsoft.com/",

@@ -66,7 +66,7 @@ ms_set_key <- function(api_key) {
 
 #' @describeIn ms_fetch_key Check whether API Key is valid
 #' @export
-ms_valid_key <- function(api_key = NULL, region = mscstts2::region) {
+ms_valid_key <- function(api_key = NULL, region = "westus") {
   res <- try({
     ms_get_token(api_key = api_key,
                  region = region)
@@ -92,7 +92,7 @@ ms_valid_key <- function(api_key = NULL, region = mscstts2::region) {
 #'    token = ms_get_token()
 #' }
 ms_get_token <- function(api_key = NULL,
-                        region = mscstts2::region) {
+                        region = "westus") {
   # Setup URL and API Key
   token_url <- ms_token_url(region = region)
   api_key <- ms_fetch_key(api_key = api_key, error = TRUE)

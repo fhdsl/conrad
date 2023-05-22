@@ -22,8 +22,7 @@ ms_region = function(region = mscstts2::region) {
 
 #' @rdname ms_region
 #' @export
-ms_set_region = function(
-    region = mscstts2::region) {
+ms_set_region = function(region = mscstts2::region) {
   region = match.arg(region)
   options(ms_region = region)
   return(region)
