@@ -39,7 +39,8 @@ devtools::install_github("howardbaek/mscstts2")
 
 1.  Sign in/Create an Azure account on [Microsoft Azure Cognitive
     Services](https://azure.microsoft.com/en-us/free/cognitive-services/).
-2.  Click `+ Create a resource`
+2.  Click `+ Create a resource` (below “Azure services” or click on the
+    Hamburger button)
 3.  Search for “Speech” and Click `Create` -\> `Speech`
 4.  Create a [Resource
     group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group)
@@ -90,6 +91,9 @@ uses the
 `https://westus.tts.speech.microsoft.com/cognitiveservices/voices/list`
 endpoint.
 
+:warning: Be sure to specify the Speech resource region that corresponds
+to your API Key.
+
 ``` r
 ms_list_voice(api_key = "YOUR_API_KEY", region = "westus")
 ```
@@ -105,9 +109,7 @@ The endpoint requires [Speech Synthesis Markup Language
 to specify the language, gender, and full voice name.
 
 :warning: Be sure to specify the Speech resource region that corresponds
-to your API Key. If you don’t, you will run into HTTP `403 Forbidden`
-response status codes. This means that the your request is
-well-formulated, but the server refuses to authorize it.
+to your API Key.
 
 ``` r
 ms_synthesize(script = "Hello, this is a talking computer", region = "westus")
@@ -120,6 +122,9 @@ ms_synthesize(script = "Hello, this is a talking computer", region = "westus")
 token](https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-text-to-speech?tabs=streaming#how-to-get-an-access-token).
 The function require an API key and region as inputs. The access token
 is used to send requests to the API.
+
+:warning: Be sure to specify the Speech resource region that corresponds
+to your API Key.
 
 ``` r
 ms_get_token(api_key = "YOUR_API_KEY", region = "westus")

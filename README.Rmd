@@ -36,7 +36,7 @@ devtools::install_github("howardbaek/mscstts2")
 ## Getting an API key
 
 1. Sign in/Create an Azure account on [Microsoft Azure Cognitive Services](https://azure.microsoft.com/en-us/free/cognitive-services/).
-2. Click `+ Create a resource`
+2. Click `+ Create a resource` (below "Azure services" or click on the Hamburger button)
 3. Search for "Speech" and Click `Create` -> `Speech`
 4. Create a [Resource group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group) and a "Name".
 5. Choose `Pricing tier` (you can choose the free version with `Free F0`)
@@ -69,6 +69,8 @@ You can set your API key in a number of ways:
 
 For example, to get a list of all the voices for the `westus` region, it uses the `https://westus.tts.speech.microsoft.com/cognitiveservices/voices/list` endpoint.
 
+:warning: Be sure to specify the Speech resource region that corresponds to your API Key.
+
 
 ```{r, eval = FALSE}
 ms_list_voice(api_key = "YOUR_API_KEY", region = "westus")
@@ -79,7 +81,7 @@ ms_list_voice(api_key = "YOUR_API_KEY", region = "westus")
 
 `ms_synthesize()` uses the `tts.speech.microsoft.com/cognitiveservices/v1` endpoint to convert [text to speech](https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-text-to-speech?tabs=streaming#convert-text-to-speech). The endpoint requires [Speech Synthesis Markup Language (SSML)](https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-synthesis-markup) to specify the language, gender, and full voice name. 
 
-:warning: Be sure to specify the Speech resource region that corresponds to your API Key. If you don't, you will run into HTTP `403 Forbidden` response status codes. This means that the your request is well-formulated, but the server refuses to authorize it.
+:warning: Be sure to specify the Speech resource region that corresponds to your API Key.
 
 ```{r, eval = FALSE}
 ms_synthesize(script = "Hello, this is a talking computer", region = "westus")
@@ -90,6 +92,8 @@ ms_synthesize(script = "Hello, this is a talking computer", region = "westus")
 
 `ms_get_token()` makes a request to the `issueToken` endpoint to get an [access token](https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-text-to-speech?tabs=streaming#how-to-get-an-access-token). The function require an API key and region as inputs. The access token is used to send requests to the API. 
 
+
+:warning: Be sure to specify the Speech resource region that corresponds to your API Key.
 
 ```{r, eval = FALSE}
 ms_get_token(api_key = "YOUR_API_KEY", region = "westus")
