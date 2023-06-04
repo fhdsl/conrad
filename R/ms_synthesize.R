@@ -55,7 +55,7 @@ ms_synthesize = function(script,
     httr2::req_headers(`Content-Type` = "application/ssml+xml",
                        `X-Microsoft-OutputFormat` = "riff-24khz-16bit-mono-pcm",
                        `Authorization` = paste("Bearer",  as.character(token)),
-                       `User-Agent` = "MyTextToSpeechApp",
+                       `User-Agent` = "mscstts2 (https://github.com/howardbaek/mscstts2)",
                        `Host` = paste0(region, ".", "tts.speech.microsoft.com")) %>%
     httr2::req_body_raw(ssml)
   # Perform a request and fetch the response
