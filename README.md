@@ -32,7 +32,7 @@ You can install the development version of conrad from
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("howardbaek/conrad")
+devtools::install_github("fhdsl/conrad")
 ```
 
 ## Getting an API key
