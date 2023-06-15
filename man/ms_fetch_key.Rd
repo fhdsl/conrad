@@ -13,7 +13,7 @@ ms_exist_key(api_key = NULL)
 
 ms_set_key(api_key)
 
-ms_valid_key(api_key = NULL, region = mscstts2::region)
+ms_valid_key(api_key = NULL, region = "westus")
 }
 \arguments{
 \item{api_key}{Microsoft Cognitive Services API key}

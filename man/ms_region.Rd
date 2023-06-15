@@ -5,9 +5,9 @@
 \alias{ms_set_region}
 \title{Check if provided region is supported by Speech service}
 \usage{
-ms_region(region = mscstts2::region)
+ms_region(region = conrad::region)
 
-ms_set_region(region = mscstts2::region)
+ms_set_region(region = conrad::region)
 }
 \arguments{
 \item{region}{Subscription region for API key. For more info, see

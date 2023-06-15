@@ -37,7 +37,7 @@ ms_tts_url(region = "westus")
 \item{escape}{Should non-standard characters be substituted?}
 }
 \value{
-A response in binary format
+An HTTP response in hexadecimal representation of binary data
 }
 \description{
 Convert Text to Speech by using Speech Synthesis Markup Language (SSML)

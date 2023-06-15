@@ -4,7 +4,7 @@
 \alias{ms_list_voice}
 \title{Get List of Voices for Specified Region}
 \usage{
-ms_list_voice(api_key = NULL, region = NULL)
+ms_list_voice(api_key = NULL, region = "westus")
 }
 \arguments{
 \item{api_key}{Microsoft Azure Cognitive Services API key}

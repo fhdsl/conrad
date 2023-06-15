@@ -6,9 +6,9 @@
 \alias{ms_token_expired}
 \title{Get Microsoft Text To Speech (TTS) or Cognitive Services Token from API Key}
 \usage{
-ms_get_token(api_key = NULL, region = mscstts2::region)
+ms_get_token(api_key = NULL, region = "westus")
 
-ms_token_url(region = mscstts2::region)
+ms_token_url(region = conrad::region)
 
 ms_token_expired(token = NULL)
 }
