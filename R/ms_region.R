@@ -5,11 +5,11 @@
 #'
 #' @return region
 #' @export
-ms_region = function(region = mscstts2::region) {
+ms_region = function(region = conrad::region) {
   if (missing(region)) {
     region = getOption("ms_region")
   }
-  if (any(!(region %in% mscstts2::region))) {
+  if (any(!(region %in% conrad::region))) {
     warning("Some regions not supported by Speech service")
     stopifnot(length(region) >= 1)
     region = region[1]
@@ -22,7 +22,7 @@ ms_region = function(region = mscstts2::region) {
 
 #' @rdname ms_region
 #' @export
-ms_set_region = function(region = mscstts2::region) {
+ms_set_region = function(region = conrad::region) {
   region = match.arg(region)
   options(ms_region = region)
   return(region)

@@ -134,7 +134,7 @@ ms_get_token <- function(api_key = NULL,
 #'
 #' @rdname ms_get_token
 #' @export
-ms_token_url <- function(region = mscstts2::region) {
+ms_token_url <- function(region = conrad::region) {
   if (!is.null(region)) {
     region = match.arg(region)
   } else {

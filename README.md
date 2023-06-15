@@ -1,18 +1,18 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# mscstts2
+# conrad
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-:exclamation:*mscstts2 is a reboot of
+:exclamation:*conrad is a reboot of
 [mscstts](https://github.com/muschellij2/mscstts). Instead of
 [httr](https://httr.r-lib.org/#status), which is superseded and not
 recommended, we use [httr2](https://httr2.r-lib.org/) to perform HTTP
 requests to the Microsoft Cognitive Services Text to Speech REST API.*
 
-mscstts2 serves as a client to the [Microsoft Cognitive Services Text to
+conrad serves as a client to the [Microsoft Cognitive Services Text to
 Speech REST
 API](https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-text-to-speech?tabs=streaming).
 The Text to Speech REST API supports neural text to speech voices, which
@@ -27,12 +27,12 @@ not work.
 
 ## Installation
 
-You can install the development version of mscstts2 from
+You can install the development version of conrad from
 [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
-devtools::install_github("howardbaek/mscstts2")
+devtools::install_github("howardbaek/conrad")
 ```
 
 ## Getting an API key
@@ -165,7 +165,7 @@ the package and make it even more reliable in the long-term.
 
 ## Acknowledgements
 
-mscstts2 wouldn’t be possible without prior work on
+conrad wouldn’t be possible without prior work on
 [mscstts](https://github.com/muschellij2/mscstts) by [John
 Muschelli](https://github.com/muschellij2) and
 [httr2](https://github.com/r-lib/httr2) by [Hadley
