@@ -16,6 +16,7 @@ knitr::opts_chunk$set(
 # conrad
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/fhdsl/conrad/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/fhdsl/conrad/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
 :exclamation:*conrad is a reboot of [mscstts](https://github.com/muschellij2/mscstts). Instead of [httr](https://httr.r-lib.org/#status), which is superseded and not recommended, we use [httr2](https://httr2.r-lib.org/) to perform HTTP requests to the Microsoft Cognitive Services Text to Speech REST API.*
