@@ -139,11 +139,11 @@ ms_get_token(api_key = "YOUR_API_KEY", region = "westus")
   [httr2](https://httr2.r-lib.org/) for handling HTTP requests to the
   [Text to Speech REST
   API](https://learn.microsoft.com/en-us/azure/cognitive-services/Speech-Service/rest-text-to-speech?tabs=streaming).
-  This change was motivated by the fact that
-  [httr](https://httr.r-lib.org/#status) is no longer being actively
-  maintained, with updates limited to those necessary for CRAN
-  compatibility. In contrast, httr2 represents a modern reimagining of
-  httr and is strongly recommended for usage.
+  This change was motivated by the fact that httr is [no
+  longer](https://httr.r-lib.org/#status) being actively maintained,
+  with updates limited to those necessary for CRAN compatibility. In
+  contrast, httr2 represents a modern reimagining of httr and is
+  strongly recommended for usage.
 - It resolves the HTTP 403 Forbidden
   [issue](https://github.com/muschellij2/mscstts/issues/13). The
   occurrence of an HTTP 403 Forbidden response status code signifies

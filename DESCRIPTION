@@ -1,9 +1,12 @@
 Package: conrad
 Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
-Authors@R: 
-    person("First", "Last", , "howardbaek.fh@gmail.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
+Authors@R: c( 
+    person("Howard", "Baek", email = "howardbaek.fh@gmail.com", role = c("aut", "cre"),
+           comment = c(ORCID = "0009-0000-8942-1618")),
+    person("John", "Muschelli", email = "muschellij2@gmail.com", role = c("aut"),
+           comment = c(ORCID = "0009-0000-8942-1618"))
+           )
 Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Encoding: UTF-8
