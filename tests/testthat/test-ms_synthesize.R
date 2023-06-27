@@ -1,4 +1,5 @@
 test_that("Basic ms_synthesize() works", {
+  skip_if_no_key()
   # Returns raw bytes
   res <- ms_synthesize("Hello world")
   # Convert raw bytes to character
@@ -11,6 +12,8 @@ test_that("Basic ms_synthesize() works", {
 })
 
 test_that("Error: Wrong region", {
+  skip_if_no_key()
+
   # Wrong region
   expect_error(suppressWarnings(ms_synthesize("Hello world", region = "westus9")))
   expect_error(suppressWarnings(ms_synthesize("Hello world", region = "easttus9")))

@@ -2,6 +2,7 @@ voice_list_names <- c("Name", "DisplayName", "LocalName",
                       "ShortName", "Gender", "Locale", "LocaleName")
 
 test_that("ms_list_voice() returns a dataframe with voice information", {
+  skip_if_no_key()
   response_df <- ms_list_voice(region = "westus")
   response_df <- response_df[,1:7]
 

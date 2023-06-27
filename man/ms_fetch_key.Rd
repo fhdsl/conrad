@@ -25,6 +25,10 @@ ms_valid_key(api_key = NULL, region = "westus")
 }
 \value{
 API key
+
+Logical vector, indicating whether user has API key.
+
+Logical vector, indicating whether API key is valid.
 }
 \description{
 Determines if \code{option(ms_tts_key)} is set or key is stored in an
@@ -33,11 +37,11 @@ not found, stops and returns an error. If found, returns the value.
 }
 \section{Functions}{
 \itemize{
-\item \code{ms_exist_key()}: Does user have API Key?
+\item \code{ms_exist_key()}: Does user have API key?
 
 \item \code{ms_set_key()}: Set API Key as a global option
 
-\item \code{ms_valid_key()}: Check whether API Key is valid
+\item \code{ms_valid_key()}: Check whether API key is valid
 
 }}
 \note{
@@ -49,5 +53,20 @@ it accessible by \code{api_key = Sys.getenv('MS_TTS_API_KEY")}, or
 \examples{
 \dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 res = ms_fetch_key(api_key = NULL, error = FALSE)
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+# Don't provide api key but fetch it programmatically
+ms_exist_key(api_key = NULL)
+
+# Provide api key XXX
+ms_exist_key(api_key = "XXX")
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+# Set api key XXX
+ms_set_key(api_key = "XXX")
+\dontshow{\}) # examplesIf}
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+# Check whether API key is valid in westus
+ms_valid_key(region = "westus")
 \dontshow{\}) # examplesIf}
 }

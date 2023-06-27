@@ -20,6 +20,8 @@ likely from \code{\link{ms_get_token}}}
 }
 \value{
 A list of the request and token
+
+Logical vector, indicating whether token has expired
 }
 \description{
 Get Microsoft Text To Speech (TTS) or Cognitive Services Token from API Key
@@ -28,9 +30,11 @@ Check if token has expired
 }
 \examples{
 \dontshow{if (ms_valid_key()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-   token = ms_get_token()
+# Get token where region is westus
+token = ms_get_token(region = "westus")
 \dontshow{\}) # examplesIf}
-\dontshow{if (ms_valid_key()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
-   ms_token_expired()
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+# Check if token XXX has expired
+ms_token_expired(token = "XXX")
 \dontshow{\}) # examplesIf}
 }

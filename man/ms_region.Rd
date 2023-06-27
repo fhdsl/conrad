@@ -11,12 +11,16 @@ ms_region(region = conrad::region)
 \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}}
 }
 \value{
-region
+Character vector of region
 }
 \description{
 If region is supported, this function returns the region. If not supported, throws a warning message.
 }
 \examples{
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+# Check if westus is supported
 ms_region(region = "westus")
+# Check if eastus is supported
 ms_region(region = "eastus")
+\dontshow{\}) # examplesIf}
 }
