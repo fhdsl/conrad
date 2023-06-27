@@ -47,7 +47,8 @@ ms_fetch_key <- function(api_key = NULL, error = TRUE) {
   api_key
 }
 
-#' @describeIn ms_fetch_key Does user have API Key?
+#' @describeIn ms_fetch_key Does user have API key?
+#' @return Logical vector, indicating whether user has API key.
 #' @export
 #'
 #' @examplesIf interactive()
@@ -63,6 +64,7 @@ ms_exist_key <- function(api_key = NULL) {
 
 
 #' @describeIn ms_fetch_key Set API Key as a global option
+#' @return NULL
 #' @export
 #'
 #' @examplesIf interactive()
@@ -74,10 +76,11 @@ ms_set_key <- function(api_key) {
 }
 
 
-#' @describeIn ms_fetch_key Check whether API Key is valid
+#' @describeIn ms_fetch_key Check whether API key is valid
+#' @return Logical vector, indicating whether API key is valid.
 #' @export
 #' @examplesIf interactive()
-#' # Check whether api key is valid in westus
+#' # Check whether API key is valid in westus
 #' ms_valid_key(region = "westus")
 ms_valid_key <- function(api_key = NULL, region = "westus") {
   res <- try({

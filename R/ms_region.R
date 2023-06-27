@@ -5,7 +5,7 @@
 #' @param region Subscription region for API key. For more info, see
 #' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
 #'
-#' @return region
+#' @return Character vector of region
 #' @export
 #'
 #' @examplesIf interactive()
