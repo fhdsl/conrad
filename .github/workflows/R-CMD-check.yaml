@@ -43,9 +43,9 @@ jobs:
         with:
           extra-packages: any::rcmdcheck
           needs: check
-      - name: Supply API Keys for Testing with GHA
+      - name: Supply API keys
         env:
-           MS_TTS_API_KEY = ${{ secrets.MS_TTS_API_KEY }}
+          MS_TTS_API_KEY: ${{ secrets.MS_TTS_API_KEY }}
       - uses: r-lib/actions/check-r-package@v2
         with:
           upload-snapshots: true
