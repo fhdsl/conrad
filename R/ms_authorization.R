@@ -165,6 +165,7 @@ ms_token_url <- function(region = conrad::region) {
 #' likely from \code{\link{ms_get_token}}
 #'
 #' @rdname ms_get_token
+#' @return Logical vector, indicating whether token has expired
 #' @export
 #'
 #' @examplesIf interactive()
