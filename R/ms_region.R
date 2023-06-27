@@ -8,8 +8,10 @@
 #' @return region
 #' @export
 #'
-#' @examples
+#' @examplesIf interactive()
+#' # Check if westus is supported
 #' ms_region(region = "westus")
+#' # Check if eastus is supported
 #' ms_region(region = "eastus")
 ms_region = function(region = conrad::region) {
   if (missing(region)) {

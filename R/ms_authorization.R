@@ -49,6 +49,13 @@ ms_fetch_key <- function(api_key = NULL, error = TRUE) {
 
 #' @describeIn ms_fetch_key Does user have API Key?
 #' @export
+#'
+#' @examplesIf interactive()
+#' # Don't provide api key but fetch it programmatically
+#' ms_exist_key(api_key = NULL)
+#'
+#' # Provide api key XXX
+#' ms_exist_key(api_key = "XXX")
 ms_exist_key <- function(api_key = NULL) {
   api_key <- ms_fetch_key(api_key = api_key, error = FALSE)
   !is.null(api_key)
@@ -57,6 +64,10 @@ ms_exist_key <- function(api_key = NULL) {
 
 #' @describeIn ms_fetch_key Set API Key as a global option
 #' @export
+#'
+#' @examplesIf interactive()
+#' # Set api key XXX
+#' ms_set_key(api_key = "XXX")
 ms_set_key <- function(api_key) {
   options("ms_tts_key" = api_key)
   invisible(NULL)
@@ -65,6 +76,9 @@ ms_set_key <- function(api_key) {
 
 #' @describeIn ms_fetch_key Check whether API Key is valid
 #' @export
+#' @examplesIf interactive()
+#' # Check whether api key is valid in westus
+#' ms_valid_key(region = "westus")
 ms_valid_key <- function(api_key = NULL, region = "westus") {
   res <- try({
     ms_get_token(api_key = api_key,
@@ -87,7 +101,8 @@ ms_valid_key <- function(api_key = NULL, region = "westus") {
 #' @export
 #'
 #' @examplesIf ms_valid_key()
-#'    token = ms_get_token()
+#' # Get token where region is westus
+#' token = ms_get_token(region = "westus")
 ms_get_token <- function(api_key = NULL,
                         region = "westus") {
   # Setup URL and API Key
@@ -149,8 +164,9 @@ ms_token_url <- function(region = conrad::region) {
 #' @rdname ms_get_token
 #' @export
 #'
-#' @examplesIf ms_valid_key()
-#'    ms_token_expired()
+#' @examplesIf interactive()
+#' # Check if token XXX has expired
+#' ms_token_expired(token = "XXX")
 ms_token_expired <- function(token = NULL) {
   if (!inherits(token, "token")) {
     if (is.list(token)) {

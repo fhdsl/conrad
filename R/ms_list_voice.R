@@ -11,7 +11,7 @@
 #' @return A \code{data.frame} of the names and their long names.
 #' @export
 #'
-#' @examplesIf ms_exist_key()
+#' @examplesIf interactive()
 #' # List voices for westus
 #' ms_list_voice(region = "westus")
 #'

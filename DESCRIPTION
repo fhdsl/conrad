@@ -7,9 +7,8 @@ Authors@R: c(
     person("John", "Muschelli", email = "muschellij2@gmail.com", role = c("aut"),
            comment = c(ORCID = "0009-0000-8942-1618"))
            )
-Description: A client to the Microsoft Cognitive Services Text to Speech REST API. 
-    'conrad' allows you to convert text into synthesized speech and get a list of supported voices for a region. 
-    Text to Speech REST API supports neural text to speech voices, which support specific languages and dialects 
+Description: Convert text into synthesized speech and get a list of supported voices for a region. 
+    The Text to Speech REST API supports neural text to speech voices, which support specific languages and dialects 
     that are identified by locale. 
 License: MIT + file LICENSE
 Encoding: UTF-8
