@@ -16,7 +16,7 @@
 #'
 #' @return API key
 #' @export
-#' @examples
+#' @examplesIf interactive()
 #' res = ms_fetch_key(api_key = NULL, error = FALSE)
 ms_fetch_key <- function(api_key = NULL, error = TRUE) {
   # Global Option
@@ -86,10 +86,8 @@ ms_valid_key <- function(api_key = NULL, region = "westus") {
 #' @return A list of the request and token
 #' @export
 #'
-#' @examples
-#' if (ms_valid_key()) {
+#' @examplesIf ms_valid_key()
 #'    token = ms_get_token()
-#' }
 ms_get_token <- function(api_key = NULL,
                         region = "westus") {
   # Setup URL and API Key
@@ -126,13 +124,7 @@ ms_get_token <- function(api_key = NULL,
 }
 
 
-#' Create issueToken URL Endpoint to get access token
-#'
-#' @param region Subscription region for API key. For more info, see
-#' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
-#'
-#' @rdname ms_get_token
-#' @export
+# Create issueToken URL Endpoint to get access token
 ms_token_url <- function(region = conrad::region) {
   if (!is.null(region)) {
     region = match.arg(region)
@@ -156,6 +148,9 @@ ms_token_url <- function(region = conrad::region) {
 #'
 #' @rdname ms_get_token
 #' @export
+#'
+#' @examplesIf ms_valid_key()
+#'    ms_token_expired()
 ms_token_expired <- function(token = NULL) {
   if (!inherits(token, "token")) {
     if (is.list(token)) {

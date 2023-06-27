@@ -2,12 +2,9 @@
 % Please edit documentation in R/ms_region.R
 \name{ms_region}
 \alias{ms_region}
-\alias{ms_set_region}
 \title{Check if provided region is supported by Speech service}
 \usage{
 ms_region(region = conrad::region)
-
-ms_set_region(region = conrad::region)
 }
 \arguments{
 \item{region}{Subscription region for API key. For more info, see
@@ -17,5 +14,9 @@ ms_set_region(region = conrad::region)
 region
 }
 \description{
-Check if provided region is supported by Speech service
+If region is supported, this function returns the region. If not supported, throws a warning message.
+}
+\examples{
+ms_region(region = "westus")
+ms_region(region = "eastus")
 }

@@ -47,5 +47,7 @@ it accessible by \code{api_key = Sys.getenv('MS_TTS_API_KEY")}, or
   Sys.getenv('MS_TTS_API_KEY2")}
 }
 \examples{
+\dontshow{if (interactive()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 res = ms_fetch_key(api_key = NULL, error = FALSE)
+\dontshow{\}) # examplesIf}
 }

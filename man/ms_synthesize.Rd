@@ -2,7 +2,6 @@
 % Please edit documentation in R/ms_synthesize.R
 \name{ms_synthesize}
 \alias{ms_synthesize}
-\alias{ms_tts_url}
 \title{Convert Text to Speech}
 \usage{
 ms_synthesize(
@@ -15,8 +14,6 @@ ms_synthesize(
   voice = NULL,
   escape = FALSE
 )
-
-ms_tts_url(region = "westus")
 }
 \arguments{
 \item{script}{A character vector of text to be converted to speech}
@@ -47,9 +44,9 @@ For more info, see Section \href{https://learn.microsoft.com/en-us/azure/cogniti
 of the Microsoft documentation.
 }
 \examples{
-\dontrun{
+\dontshow{if (ms_exist_key()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # Convert text to speech
-res <- ms_synthesize(script = "Hello world, this is a talking computer",
+res <- ms_synthesize(script = "Hello world, this is a talking computer testing test",
                      region = "westus",
                      gender = "Female")
 # Returns hexadecimal representation of binary data
@@ -59,10 +56,9 @@ output_path <- tempfile(fileext = ".wav")
 # Write binary data to output path
 writeBin(res, con = output_path)
 # Play audio in browser
-play_audio(audio = output_path)
+# play_audio(audio = output_path)
 
 # Delete temporary file
 file.remove(output_path)
-}
-
+\dontshow{\}) # examplesIf}
 }

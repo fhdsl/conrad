@@ -11,15 +11,12 @@
 #' @return A \code{data.frame} of the names and their long names.
 #' @export
 #'
-#' @examples
-#' \dontrun{
+#' @examplesIf ms_exist_key()
 #' # List voices for westus
 #' ms_list_voice(region = "westus")
 #'
 #' # List voices for eastus
 #' ms_list_voice(region = "eastus")
-#' }
-#'
 ms_list_voice = function(api_key = NULL,
                          region = "westus") {
   region <- ms_region(region)

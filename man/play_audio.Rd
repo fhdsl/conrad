@@ -21,9 +21,7 @@ detailing the \verb{<audio>} HTML element.
 }
 \examples{
 \dontrun{
-# Say your audio output (output.wav) is in your working directory
-play_audio(audio = "output.wav")
 # Opens a browser with embedded audio
+play_audio(audio = "output.wav")
 }
-
 }

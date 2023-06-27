@@ -17,11 +17,10 @@
 #'
 #' @return An HTTP response in hexadecimal representation of binary data
 #' @export
-#' @examples
-#' \dontrun{
+#' @examplesIf ms_exist_key()
 #' # Convert text to speech
 #' res <- ms_synthesize(script = "Hello world, this is a talking computer testing test",
-#'                      region = "westus3",
+#'                      region = "westus",
 #'                      gender = "Female")
 #' # Returns hexadecimal representation of binary data
 #'
@@ -30,12 +29,10 @@
 #'# Write binary data to output path
 #' writeBin(res, con = output_path)
 #' # Play audio in browser
-#' play_audio(audio = output_path)
+#' # play_audio(audio = output_path)
 #'
 #' # Delete temporary file
 #' file.remove(output_path)
-#' }
-#'
 ms_synthesize = function(script,
                          region = "westus",
                          api_key = NULL,
@@ -91,9 +88,7 @@ ms_synthesize = function(script,
   out
 }
 
-#' Create Text To Speech Endpoint
-#' @rdname ms_synthesize
-#' @export
+# Create Text To Speech Endpoint
 ms_tts_url = function(region = "westus") {
   region = ms_region(region)
   tts_url <- paste0("https://", region,

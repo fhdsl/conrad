@@ -9,7 +9,7 @@
 <!-- badges: end -->
 
 :exclamation:*conrad is a reboot of
-[mscstts](https://github.com/muschellij2/mscstts). Instead of
+[mscstts](https://github.com/jhudsl/mscstts). Instead of
 [httr](https://httr.r-lib.org/#status), which is superseded and not
 recommended, we use [httr2](https://httr2.r-lib.org/) to perform HTTP
 requests to the Microsoft Cognitive Services Text to Speech REST API.*
@@ -29,8 +29,13 @@ not work.
 
 ## Installation
 
-You can install the development version of conrad from
-[GitHub](https://github.com/) with:
+Install the CRAN version:
+
+``` r
+install.packages("conrad")
+```
+
+Or install the development version from GitHub:
 
 ``` r
 # install.packages("devtools")
@@ -154,16 +159,15 @@ ms_get_token(api_key = "YOUR_API_KEY", region = "westus")
   contrast, httr2 represents a modern reimagining of httr and is
   strongly recommended for usage.
 - It resolves the HTTP 403 Forbidden
-  [issue](https://github.com/muschellij2/mscstts/issues/13). An HTTP 403
+  [issue](https://github.com/jhudsl/mscstts/issues/13). An HTTP 403
   Forbidden response status code signifies that the server comprehends
   the request but denies authorization. In the case of
-  [`mscstts::ms_synthesize()`](https://github.com/muschellij2/mscstts/blob/master/R/ms_synthesize.R),
-  the [problem](https://github.com/muschellij2/mscstts/issues/13) arose
-  due to the use of an invalid voice within the HTTP request,
-  specifically concerning the chosen region. For instance, the SSML
-  might have contained a voice name that was not supported in the
-  `westus` region. As a consequence, the server would reject the HTTP
-  request.
+  [`mscstts::ms_synthesize()`](https://github.com/jhudsl/mscstts/blob/master/R/ms_synthesize.R),
+  the [problem](https://github.com/jhudsl/mscstts/issues/13) arose due
+  to the use of an invalid voice within the HTTP request, specifically
+  concerning the chosen region. For instance, the SSML might have
+  contained a voice name that was not supported in the `westus` region.
+  As a consequence, the server would reject the HTTP request.
 - We have made significant improvements to the documentation across the
   entire package. These enhancements include simpler function names,
   commented functions for clarity, removal of unnecessary functions and
@@ -176,7 +180,7 @@ the package and make it even more reliable in the long-term.
 ## Acknowledgements
 
 conrad wouldn’t be possible without prior work on
-[mscstts](https://github.com/muschellij2/mscstts) by [John
+[mscstts](https://github.com/jhudsl/mscstts) by [John
 Muschelli](https://github.com/muschellij2) and
 [httr2](https://github.com/r-lib/httr2) by [Hadley
 Wickham](https://github.com/hadley).

@@ -1,16 +1,22 @@
 #' Check if provided region is supported by Speech service
 #'
+#' If region is supported, this function returns the region. If not supported, throws a warning message.
+#'
 #' @param region Subscription region for API key. For more info, see
 #' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
 #'
 #' @return region
 #' @export
+#'
+#' @examples
+#' ms_region(region = "westus")
+#' ms_region(region = "eastus")
 ms_region = function(region = conrad::region) {
   if (missing(region)) {
     region = getOption("ms_region")
   }
   if (any(!(region %in% conrad::region))) {
-    warning("Some regions not supported by Speech service")
+    warning("Region(s) not supported by Speech service")
     stopifnot(length(region) >= 1)
     region = region[1]
   } else {
@@ -20,8 +26,7 @@ ms_region = function(region = conrad::region) {
   region
 }
 
-#' @rdname ms_region
-#' @export
+# Set region
 ms_set_region = function(region = conrad::region) {
   region = match.arg(region)
   options(ms_region = region)

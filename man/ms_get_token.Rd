@@ -2,13 +2,10 @@
 % Please edit documentation in R/ms_authorization.R
 \name{ms_get_token}
 \alias{ms_get_token}
-\alias{ms_token_url}
 \alias{ms_token_expired}
 \title{Get Microsoft Text To Speech (TTS) or Cognitive Services Token from API Key}
 \usage{
 ms_get_token(api_key = NULL, region = "westus")
-
-ms_token_url(region = conrad::region)
 
 ms_token_expired(token = NULL)
 }
@@ -27,12 +24,13 @@ A list of the request and token
 \description{
 Get Microsoft Text To Speech (TTS) or Cognitive Services Token from API Key
 
-Create issueToken URL Endpoint to get access token
-
 Check if token has expired
 }
 \examples{
-if (ms_valid_key()) {
+\dontshow{if (ms_valid_key()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
    token = ms_get_token()
-}
+\dontshow{\}) # examplesIf}
+\dontshow{if (ms_valid_key()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+   ms_token_expired()
+\dontshow{\}) # examplesIf}
 }

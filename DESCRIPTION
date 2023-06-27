@@ -2,15 +2,15 @@ Package: conrad
 Title: Client for the Microsoft Cognitive Services Text to Speech REST API
 Version: 0.0.0.9000
 Authors@R: c( 
-    person("Howard", "Baek", email = "howardbaek.fh@gmail.com", role = c("aut", "cre"),
+    person("Howard", "Baek", email = "howardbaek.fh@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0009-0000-8942-1618")),
     person("John", "Muschelli", email = "muschellij2@gmail.com", role = c("aut"),
            comment = c(ORCID = "0009-0000-8942-1618"))
            )
 Description: A client to the Microsoft Cognitive Services Text to Speech REST API. 
-'conrad' allows you to convert text into synthesized speech and get a list of supported voices for a region. 
-The Text to Speech REST API supports neural text to speech voices, which support specific languages and dialects 
-that are identified by locale. Each available endpoint is associated with a region.
+    'conrad' allows you to convert text into synthesized speech and get a list of supported voices for a region. 
+    Text to Speech REST API supports neural text to speech voices, which support specific languages and dialects 
+    that are identified by locale. 
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

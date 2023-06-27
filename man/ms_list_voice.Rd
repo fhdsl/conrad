@@ -23,12 +23,11 @@ For more info, see \href{https://learn.microsoft.com/en-us/azure/cognitive-servi
 from the Microsoft documentation.
 }
 \examples{
-\dontrun{
+\dontshow{if (ms_exist_key()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 # List voices for westus
 ms_list_voice(region = "westus")
 
 # List voices for eastus
 ms_list_voice(region = "eastus")
-}
-
+\dontshow{\}) # examplesIf}
 }

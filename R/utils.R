@@ -26,11 +26,9 @@ get_env_key = function(x) {
 #'
 #' @examples
 #' \dontrun{
-#' # Say your audio output (output.wav) is in your working directory
-#' play_audio(audio = "output.wav")
 #' # Opens a browser with embedded audio
+#' play_audio(audio = "output.wav")
 #' }
-#'
 play_audio <- function(audio = "output.wav",
                        html = "player.html"){
   # Write html code to a html file
