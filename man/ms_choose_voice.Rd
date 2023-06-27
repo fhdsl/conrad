@@ -25,5 +25,12 @@ ms_choose_voice(
 List of gender, language, and full voice name
 }
 \description{
-Provide default voice when not provided
+If 'voice' argument is not supplied to \code{ms_synthesize()}, obtain full list of voices for
+a specified region and by default, use the first voice in that list.
+}
+\examples{
+\dontrun{
+# Default voice whose gender is Female, language is English, and region is 'westus'
+ms_choose_voice(gender = "Female", language = "en-US", region = "westus")
+}
 }

@@ -1,12 +1,22 @@
-#' Check if provided voice is supported in region
+#' Retrieve Gender, Full Voice Name, and Language associated with provided Voice
 #'
-#' @param voice Full voice name
+#' Verify whether given voice is compatible with specific region. If it is, provide
+#' the gender, full voice name, and language associated with given voice.
+#'
+#' @param voice Full voice name ("Microsoft Server Speech Text to Speech Voice (XX, YY)")
 #' @param api_key Microsoft Azure Cognitive Services API key
 #' @param region Subscription region for API key. For more info, see
 #' \url{https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/regions}
 #'
 #' @return List of gender, language, and full voice name
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' # Retrieve gender, full name, and language
+#' ms_use_voice(voice = "Microsoft Server Speech Text to Speech Voice (en-US, JacobNeural)",
+#'               region = "westus")
+#' }
 ms_use_voice <- function(voice,
                          api_key = NULL,
                          region = "westus") {
@@ -31,6 +41,9 @@ ms_use_voice <- function(voice,
 
 #' Provide default voice when not provided
 #'
+#' If 'voice' argument is not supplied to `ms_synthesize()`, obtain full list of voices for
+#' a specified region and by default, use the first voice in that list.
+#'
 #' @param api_key Microsoft Azure Cognitive Services API key
 #' @param gender Sex of speaker
 #' @param language Language to be spoken
@@ -39,6 +52,12 @@ ms_use_voice <- function(voice,
 #'
 #' @return List of gender, language, and full voice name
 #' @export
+#'
+#' @examples
+#' \dontrun{
+#' # Default voice whose gender is Female, language is English, and region is 'westus'
+#' ms_choose_voice(gender = "Female", language = "en-US", region = "westus")
+#' }
 ms_choose_voice <- function(api_key = NULL,
                             gender = c("Female", "Male"),
                             language =  "en-US",

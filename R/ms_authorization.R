@@ -18,8 +18,7 @@
 #' @export
 #' @examples
 #' res = ms_fetch_key(api_key = NULL, error = FALSE)
-ms_fetch_key <- function(api_key = NULL,
-                        error = TRUE) {
+ms_fetch_key <- function(api_key = NULL, error = TRUE) {
   # Global Option
   if (is.null(api_key)) {
     api_key = getOption("ms_tts_key")

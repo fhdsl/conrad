@@ -2,12 +2,12 @@
 % Please edit documentation in R/ms_voice.R
 \name{ms_use_voice}
 \alias{ms_use_voice}
-\title{Check if provided voice is supported in region}
+\title{Retrieve Gender, Full Voice Name, and Language associated with provided Voice}
 \usage{
 ms_use_voice(voice, api_key = NULL, region = "westus")
 }
 \arguments{
-\item{voice}{Full voice name}
+\item{voice}{Full voice name ("Microsoft Server Speech Text to Speech Voice (XX, YY)")}
 
 \item{api_key}{Microsoft Azure Cognitive Services API key}
 
@@ -18,5 +18,13 @@ ms_use_voice(voice, api_key = NULL, region = "westus")
 List of gender, language, and full voice name
 }
 \description{
-Check if provided voice is supported in region
+Verify whether given voice is compatible with specific region. If it is, provide
+the gender, full voice name, and language associated with given voice.
+}
+\examples{
+\dontrun{
+# Retrieve gender, full name, and language
+ms_use_voice(voice = "Microsoft Server Speech Text to Speech Voice (en-US, JacobNeural)",
+              region = "westus")
+}
 }

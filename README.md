@@ -114,7 +114,16 @@ to specify the language, gender, and full voice name.
 to your API Key.
 
 ``` r
-ms_synthesize(script = "Hello, this is a talking computer", region = "westus")
+# Convert text to speech
+res <- ms_synthesize(script = "Hello world, this is a talking computer", region = "westus", gender = "Male")
+# Returns hexadecimal representation of binary data
+
+# Create file to store audio output
+output_path <- tempfile(fileext = ".wav")
+# Write binary data to output path
+writeBin(res, con = output_path)
+# Play audio in browser
+play_audio(audio = output_path)
 ```
 
 ## Get an access token
@@ -145,10 +154,9 @@ ms_get_token(api_key = "YOUR_API_KEY", region = "westus")
   contrast, httr2 represents a modern reimagining of httr and is
   strongly recommended for usage.
 - It resolves the HTTP 403 Forbidden
-  [issue](https://github.com/muschellij2/mscstts/issues/13). The
-  occurrence of an HTTP 403 Forbidden response status code signifies
-  that the server comprehends the request but denies authorization. In
-  the case of
+  [issue](https://github.com/muschellij2/mscstts/issues/13). An HTTP 403
+  Forbidden response status code signifies that the server comprehends
+  the request but denies authorization. In the case of
   [`mscstts::ms_synthesize()`](https://github.com/muschellij2/mscstts/blob/master/R/ms_synthesize.R),
   the [problem](https://github.com/muschellij2/mscstts/issues/13) arose
   due to the use of an invalid voice within the HTTP request,

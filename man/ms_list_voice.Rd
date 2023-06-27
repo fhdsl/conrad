@@ -16,5 +16,19 @@ ms_list_voice(api_key = NULL, region = "westus")
 A \code{data.frame} of the names and their long names.
 }
 \description{
-Get List of Voices for Specified Region
+Obtains a full list of voices for a specific region.
+}
+\details{
+For more info, see \href{https://learn.microsoft.com/en-us/azure/cognitive-services/Speech-Service/rest-text-to-speech?tabs=streaming#get-a-list-of-voices}{Get a list of voices}
+from the Microsoft documentation.
+}
+\examples{
+\dontrun{
+# List voices for westus
+ms_list_voice(region = "westus")
+
+# List voices for eastus
+ms_list_voice(region = "eastus")
+}
+
 }

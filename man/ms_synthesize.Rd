@@ -3,7 +3,7 @@
 \name{ms_synthesize}
 \alias{ms_synthesize}
 \alias{ms_tts_url}
-\title{Convert Text to Speech by using Speech Synthesis Markup Language (SSML)}
+\title{Convert Text to Speech}
 \usage{
 ms_synthesize(
   script,
@@ -40,7 +40,29 @@ ms_tts_url(region = "westus")
 An HTTP response in hexadecimal representation of binary data
 }
 \description{
-Convert Text to Speech by using Speech Synthesis Markup Language (SSML)
+Convert text to speech by using Speech Synthesis Markup Language (SSML)
+}
+\details{
+For more info, see Section \href{https://learn.microsoft.com/en-us/azure/cognitive-services/Speech-Service/rest-text-to-speech?tabs=streaming#convert-text-to-speech}{Convert text to speech}
+of the Microsoft documentation.
+}
+\examples{
+\dontrun{
+# Convert text to speech
+res <- ms_synthesize(script = "Hello world, this is a talking computer",
+                     region = "westus",
+                     gender = "Female")
+# Returns hexadecimal representation of binary data
 
-Create Text To Speech Endpoint
+# Create temporary file to store audio output
+output_path <- tempfile(fileext = ".wav")
+# Write binary data to output path
+writeBin(res, con = output_path)
+# Play audio in browser
+play_audio(audio = output_path)
+
+# Delete temporary file
+file.remove(output_path)
+}
+
 }

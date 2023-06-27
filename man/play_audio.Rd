@@ -13,5 +13,17 @@ play_audio(audio = "output.wav", html = "player.html")
 }
 \description{
 This uses HTML5 audio tags to play audio in your browser. Borrowed from
-\code{googleLanguageR::gl_talk_player()}
+\code{googleLanguageR::gl_talk_player()}.
+}
+\details{
+For more info, see this \href{https://developer.mozilla.org/en-US/docs/Web/HTML/Element/audio}{Mozilla documentation}
+detailing the \verb{<audio>} HTML element.
+}
+\examples{
+\dontrun{
+# Say your audio output (output.wav) is in your working directory
+play_audio(audio = "output.wav")
+# Opens a browser with embedded audio
+}
+
 }

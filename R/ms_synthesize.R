@@ -1,4 +1,9 @@
-#' Convert Text to Speech by using Speech Synthesis Markup Language (SSML)
+#' Convert Text to Speech
+#'
+#' Convert text to speech by using Speech Synthesis Markup Language (SSML)
+#'
+#' For more info, see Section [Convert text to speech](https://learn.microsoft.com/en-us/azure/cognitive-services/Speech-Service/rest-text-to-speech?tabs=streaming#convert-text-to-speech)
+#' of the Microsoft documentation.
 #'
 #' @param script A character vector of text to be converted to speech
 #' @param region Subscription region for API key. For more info, see
@@ -12,6 +17,25 @@
 #'
 #' @return An HTTP response in hexadecimal representation of binary data
 #' @export
+#' @examples
+#' \dontrun{
+#' # Convert text to speech
+#' res <- ms_synthesize(script = "Hello world, this is a talking computer testing test",
+#'                      region = "westus3",
+#'                      gender = "Female")
+#' # Returns hexadecimal representation of binary data
+#'
+#' # Create temporary file to store audio output
+#' output_path <- tempfile(fileext = ".wav")
+#'# Write binary data to output path
+#' writeBin(res, con = output_path)
+#' # Play audio in browser
+#' play_audio(audio = output_path)
+#'
+#' # Delete temporary file
+#' file.remove(output_path)
+#' }
+#'
 ms_synthesize = function(script,
                          region = "westus",
                          api_key = NULL,
@@ -55,7 +79,7 @@ ms_synthesize = function(script,
     httr2::req_headers(`Content-Type` = "application/ssml+xml",
                        `X-Microsoft-OutputFormat` = "riff-24khz-16bit-mono-pcm",
                        `Authorization` = paste("Bearer",  as.character(token)),
-                       `User-Agent` = "conrad (https://github.com/howardbaek/conrad)",
+                       `User-Agent` = "conrad (https://github.com/fhdsl/conrad)",
                        `Host` = paste0(region, ".", "tts.speech.microsoft.com")) %>%
     httr2::req_body_raw(ssml)
   # Perform a request and fetch the response
