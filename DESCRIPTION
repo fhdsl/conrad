@@ -1,6 +1,6 @@
 Package: conrad
 Title: Client for the Microsoft Cognitive Services Text to Speech REST API
-Version: 1.0.0
+Version: 2.0.0
 Authors@R: c( 
     person("Howard", "Baek", email = "howardbaek.fh@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0009-0000-8942-1618")),
