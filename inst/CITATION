@@ -1,0 +1,16 @@
+citHeader("To cite conrad in publications use:")
+
+citEntry(
+  entry    = "Article",
+  title    = "conrad: Client for the Microsoft Cognitive Services Text to Speech REST API",
+  author   = "Howard Baek",
+  journal  = ,
+  year     = ,
+  volume   = ,
+  number   = ,
+  pages    = ,
+  url      = ,
+  textVersion = paste(
+
+  )
+)
