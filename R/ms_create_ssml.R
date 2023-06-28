@@ -23,8 +23,8 @@ ms_create_ssml = function(script,
                           escape = FALSE) {
   # Remove any HTML or XML tags
   if (escape) {
-    script = gsub("[<>/]", "", script)
-    script = gsub("&", "and", script)
+    script <- gsub("[<>/]", "", script)
+    script <- gsub("&", "and", script)
   }
   stopifnot(length(language) == 1)
   gender = match.arg(gender)
