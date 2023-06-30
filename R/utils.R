@@ -21,6 +21,7 @@ get_env_key = function(x) {
 #' @param audio The file location of the audio file.  Must be supported by HTML5
 #' @param html The html file location that will be created host the audio
 #'
+#' @return No return value, called for side effects
 #' @export
 #' @importFrom utils browseURL
 #'

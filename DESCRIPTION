@@ -1,5 +1,5 @@
 Package: conrad
-Title: Client for the Microsoft Cognitive Services Text to Speech REST API
+Title: Client for the Microsoft's 'Cognitive Services Text to Speech REST' API
 Version: 1.0.0
 Authors@R: c( 
     person("Howard", "Baek", email = "howardbaek.fh@gmail.com", role = c("aut", "cre", "cph"),
@@ -8,8 +8,8 @@ Authors@R: c(
            comment = c(ORCID = "0009-0000-8942-1618"))
            )
 Description: Convert text into synthesized speech and get a list of supported voices for a region. 
-    The Text to Speech REST API supports neural text to speech voices, which support specific languages and dialects 
-    that are identified by locale. 
+    Microsoft's 'Cognitive Services Text to Speech REST' API <https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-text-to-speech?tabs=streaming>  
+    supports neural text to speech voices, which support specific languages and dialects that are identified by locale. 
 URL: https://github.com/fhdsl/conrad
 BugReports: https://github.com/fhdsl/conrad/issues
 License: MIT + file LICENSE
