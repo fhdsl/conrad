@@ -11,6 +11,9 @@ play_audio(audio = "output.wav", html = "player.html")
 
 \item{html}{The html file location that will be created host the audio}
 }
+\value{
+No return value, called for side effects
+}
 \description{
 This uses HTML5 audio tags to play audio in your browser. Borrowed from
 \code{googleLanguageR::gl_talk_player()}.
