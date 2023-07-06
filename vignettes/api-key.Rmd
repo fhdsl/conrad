@@ -1,8 +1,8 @@
 ---
-title: "Configuring API Key"
+title: "Configuring an API Key"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Configuring API Key}
+  %\VignetteIndexEntry{Configuring an API Key}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -14,48 +14,37 @@ knitr::opts_chunk$set(
 )
 ```
 
-This vignette provides a step-by-step demonstration (including screenshots) of generating an API key to access the Microsoft Cognitive Services API and setting the API key so that conrad can use the API key to access the API and perform text-to-speech. Note that users can follow a similar process to obtain an API key for accessing various other services provided by Azure Cognitive Services, such as Speech to text, Speech translation, and more.
+This vignette provides a step-by-step demonstration of generating an API key to access the Microsoft Azure Cognitive Services [Text to speech REST API](https://learn.microsoft.com/en-us/azure/cognitive-services/Speech-Service/rest-text-to-speech?tabs=streaming). Furthermore, we explain how to set up the API key so that users of conrad can access the API and its text-to-speech functionalities.
+
+Note that users can follow a similar process to obtain an API key for accessing various other services provided by Azure Cognitive Services, such as Speech to text, Speech translation, and more.
 
 ## Getting an API key
 
 
-1. Sign in/Create an Azure account on [Microsoft Azure Cognitive Services](https://azure.microsoft.com/en-us/free/cognitive-services/).
+1. Sign into [Microsoft Azure Cognitive Services](https://azure.microsoft.com/en-us/free/cognitive-services/) by clicking on the 'Sign in' option located at the top right corner. If you don't have an account yet, you can also create a new account.
 
-2. Click `+ Create a resource` (below "Azure services" or click on the Hamburger button)
-
-```{r, echo=FALSE, out.width = "90%", out.height = "70%"}
-knitr::include_graphics("img/create.png")
-```
+2. Click `+ Create a resource` (below "Azure services" or click on the Hamburger button). In Azure, a [resource](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/get-started/how-azure-resource-manager-works#what-is-an-azure-resource) is an entity managed by Azure. Virtual machines, virtual networks, and storage accounts are all examples of Azure resources. 
 
 
+3. Search for "Speech" and Click `Create` -> `Speech`. This lets you gain access to Microsoft Azure's [Speech Service](https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/), which encompasses speech recognition, speech synthesis (text-to-speech), speech translation, and more. 
 
-3. Search for "Speech" and Click `Create` -> `Speech`
+4. Create a [Resource group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group), which associates multiple resources so you can manage them as a single thing. In our case, we only have one resource, Speech Service. Also, assign a name to your resource in the Name field. 
 
+5. Select a `Pricing tier` (you can choose the free version with `Free F0`). Explore various pricing options [here](https://azure.microsoft.com/en-us/pricing/details/cognitive-services/speech-services/).
 
-4. Create a [Resource group](https://learn.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group) and a "Name".
-
-```{r, echo=FALSE, out.width = "90%", out.height = "70%"}
-knitr::include_graphics("img/resource-group.png")
-```
-
-5. Choose `Pricing tier` (you can choose the free version with `Free F0`)
 6. Click `Review + create`, review the Terms, and click `Create`.  
 
-If the deployment was successful, you should see :white_check_mark: **Your deployment is complete** on the next page.
+If the deployment was successful, you should see **Your deployment is complete** on the next page.
 
 7. Under `Next steps`, click `Go to resource`
 8. Look on the left sidebar and under `Resource Management`, click `Keys and Endpoint`
-
-```{r, echo=FALSE, out.width = "90%", out.height = "70%"}
-knitr::include_graphics("img/keys.png")
-```
 
 
 9. Copy either `KEY 1` or `KEY 2` to clipboard. Only one key is necessary to make an API call.
 
 Once you complete these steps, you have successfully retrieved your API keys to access the API. 
 
-WARNING: Remember your `Location/Region`, which you use to make calls to the API. Specifying a different region will lead to a [HTTP 403 Forbidden response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403).
+WARNING: Remember your `Location/Region`, which you use to make calls to the API. Specifying a different region to conrad functions will lead to a [HTTP 403 Forbidden response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403).
 
 
 ## Setting your API key
@@ -66,3 +55,5 @@ You can set your API key in a number of ways:
 2. In `R`, use `options(ms_tts_key = "YOUR_API_KEY")`.
 3. Set `export MS_TTS_API_KEY=YOUR_API_KEY` in `.bash_profile`/`.bashrc` if you're using `R` in the terminal.
 4. Pass `api_key = "YOUR_API_KEY"` in arguments of functions such as `ms_list_voices(api_key = "YOUR_API_KEY")`.
+
+You are now ready to access the API and utilize its text-to-speech functionalities.

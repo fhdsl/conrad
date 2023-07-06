@@ -33,7 +33,7 @@ To utilize the Speech service, you must register an account on the Microsoft Azu
 
 For example, assuming the `Location/Region` associated with the API key is `westus`, using `ms_list_voice()` will access the `https://westus.tts.speech.microsoft.com/cognitiveservices/voices/list` endpoint, providing a list of voices exclusively from the `westus` region.
 
-WARNING: Specify the Speech resource region that corresponds to your API Key
+WARNING: Specify the Speech resource region that corresponds to your API Key. Specifying the wrong region to conrad functions will lead to a [HTTP 403 Forbidden response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403).
 
 ```{r setup}
 library(conrad)
