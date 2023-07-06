@@ -136,6 +136,10 @@ writeBin(res, con = output_path)
 play_audio(audio = output_path)
 ```
 
+If you want more examples of different voices with different scripts,
+refer to the Introduction to conrad
+[vignette](http://hutchdatascience.org/conrad/articles/conrad.html).
+
 ## Get an access token
 
 `ms_get_token()` makes a request to the `issueToken` endpoint to get an
