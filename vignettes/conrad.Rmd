@@ -1,0 +1,158 @@
+---
+title: "Introduction to conrad"
+resource_files:
+  - audio/sample1.wav
+  - audio/sample2.wav
+  - audio/sample3.wav
+  - audio/sample4.wav
+  - audio/sample5.wav
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Introduction to conrad}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+exist_key <- conrad::ms_exist_key()
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  eval = exist_key
+)
+```
+
+
+This vignette introduces you to conrad's functions for speech synthesis with Microsoft Azure's [Text to Speech REST API](https://learn.microsoft.com/en-us/azure/cognitive-services/Speech-Service/rest-text-to-speech?tabs=streaming). Also, it contains several [examples][Examples] of audio output demonstrating synthesized speech.  The API enables neural text to speech voices, which support specific languages and dialects that are identified by locale. Each available endpoint is associated with a region.
+
+To utilize the Speech service, you must register an account on the Microsoft Azure Cognitive Services and obtain an API Key. Without one, this package will not work. Please refer to the API Key vignette for guidance.
+
+## Get a list of voices
+
+`ms_list_voice()` performs an HTTP request to the `tts.speech.microsoft.com/cognitiveservices/voices/list` endpoint to get a full list of voices for a specific region. It attaches a region prefix to this endpoint to get a list of voices for that region. 
+
+For example, assuming the `Location/Region` associated with the API key is `westus`, using `ms_list_voice()` will access the `https://westus.tts.speech.microsoft.com/cognitiveservices/voices/list` endpoint, providing a list of voices exclusively from the `westus` region.
+
+:warning: Specify the Speech resource region that corresponds to your API Key
+
+```{r setup}
+library(conrad)
+list_voice <- ms_list_voice(region = "westus")
+head(list_voice[c(1:7)], 3)
+```
+
+The output is a data frame containing several columns, including `Name`, `DisplayName`, `LocalName`, `ShortName`, `Gender`, `Locale`, `LocaleName`, and several other columns that you don't need to worry about. Among these columns, `Name`, `Locale`, and `Gender` are the only columns that are used in `ms_synthesize()`, the primary function enabling text-to-speech (speech synthesis) using Microsoft's Text to Speech API.
+
+
+## Text-to-Speech
+
+To convert text-to-speech, use the function `ms_synthesize()` by providing the following arguments:
+
+- `script` : Character vector of text to be converted to speech
+- `region` : Region for API key
+- `gender` : Sex of the speaker
+- `language` : Language to be spoken
+- `voice` : Full voice name (taken from `Name` variable from output of `ms_list_voice()`) 
+
+```{r, eval = FALSE}
+res <- ms_synthesize(script = "Hello world, this is a talking computer", region = "westus", 
+                     gender = "Male", language = "en-US", 
+                     voice = "Microsoft Server Speech Text to Speech Voice (en-US, JacobNeural)")
+```
+
+The result is a raw vector of binary data. Convert this into an audio output:
+
+```{r, eval = FALSE}
+# Create file to store audio output
+output_path <- tempfile(fileext = ".wav")
+# Write binary data to output path
+writeBin(res, con = output_path)
+# Play audio in browser
+play_audio(audio = output_path)
+```
+
+You can create a temporary file to store audio output as a WAV file, write the binary data into this temporary file, and finally play the audio WAV file in a browser using the `play_audio()` function.
+
+Listen to the audio:
+
+<audio controls>
+    <source src="audio/sample1.wav" type="audio/wav"/>
+</audio>
+
+## Examples
+
+For illustration purposes, we have included several embedded audio files that contain synthesized speech. They all contain different scripts and voices.
+
+A combination of Canadian capital quickly organized and petitioned for the same privileges.
+
+```{r, eval = FALSE}
+res <- ms_synthesize(script = "A combination of Canadian capital quickly organized and petitioned for the same privileges.",
+                     region = "westus", gender = "Female", language = "en-US", 
+                     voice = "Microsoft Server Speech Text to Speech Voice (en-US, AshleyNeural)")
+# Create file to store audio output
+output_path <- tempfile(fileext = ".wav")
+# Write binary data to output path
+writeBin(res, con = output_path)
+```
+
+<audio controls>
+    <source src="audio/sample2.wav" type="audio/wav"/>
+</audio>
+
+<br>
+
+Will we ever forget it.
+
+```{r, eval = FALSE}
+res <- ms_synthesize(script = "Will we ever forget it.",
+                     region = "westus", gender = "Male", language = "en-US", 
+                     voice = "Microsoft Server Speech Text to Speech Voice (en-US, RogerNeural)")
+# Create file to store audio output
+output_path <- tempfile(fileext = ".wav")
+# Write binary data to output path
+writeBin(res, con = output_path)
+```
+
+<audio controls>
+    <source src="audio/sample3.wav" type="audio/wav"/>
+</audio>
+
+
+<br>
+
+
+Death had come with terrible suddenness.
+
+```{r, eval = FALSE}
+res <- ms_synthesize(script = "Death had come with terrible suddenness.",
+                     region = "westus", gender = "Female", language = "en-US", 
+                     voice = "Microsoft Server Speech Text to Speech Voice (en-US, MichelleNeural)")
+# Create file to store audio output
+output_path <- tempfile(fileext = ".wav")
+# Write binary data to output path
+writeBin(res, con = output_path)
+```
+
+<audio controls>
+    <source src="audio/sample4.wav" type="audio/wav"/>
+</audio>
+
+
+<br>
+
+
+It drowned all sound that brute agony and death may have made.
+
+```{r, eval = FALSE}
+res <- ms_synthesize(script = "It drowned all sound that brute agony and death may have made",
+                     region = "westus", gender = "Female", language = "en-US", 
+                     voice = "Microsoft Server Speech Text to Speech Voice (en-US, ChristopherNeural)")
+# Create file to store audio output
+output_path <- tempfile(fileext = ".wav")
+# Write binary data to output path
+writeBin(res, con = output_path)
+```
+
+<audio controls>
+    <source src="audio/sample5.wav" type="audio/wav"/>
+</audio>
