@@ -4,7 +4,7 @@ pkgdown_sha: ~
 articles:
   api-key: api-key.html
   conrad: conrad.html
-last_built: 2023-07-06T07:15Z
+last_built: 2023-07-06T07:32Z
 urls:
   reference: http://hutchdatascience.org/conrad/reference
   article: http://hutchdatascience.org/conrad/articles
