@@ -44,7 +44,7 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/api-key.html">Configuring API Key</a>
+    <a class="dropdown-item" href="../articles/api-key.html">Configuring an API Key</a>
   </div>
 </li>
 <li class="nav-item">
@@ -108,7 +108,9 @@ with the API key is <code>westus</code>, using
 endpoint, providing a list of voices exclusively from the
 <code>westus</code> region.</p>
 <p>WARNING: Specify the Speech resource region that corresponds to your
-API Key</p>
+API Key. Specifying the wrong region to conrad functions will lead to a
+<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403" class="external-link">HTTP
+403 Forbidden response</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/fhdsl/conrad" class="external-link">conrad</a></span><span class="op">)</span></span>
 <span><span class="va">list_voice</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/ms_list_voice.html">ms_list_voice</a></span><span class="op">(</span>region <span class="op">=</span> <span class="st">"westus"</span><span class="op">)</span></span>
