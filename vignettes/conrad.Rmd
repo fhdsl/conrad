@@ -27,13 +27,13 @@ This vignette introduces you to conrad's functions for speech synthesis with Mic
 
 To utilize the Speech service, you must register an account on the Microsoft Azure Cognitive Services and obtain an API Key. Without one, this package will not work. Please refer to the [API Key vignette](http://hutchdatascience.org/conrad/articles/api-key.html) for guidance.
 
-## Get a list of voices
+## Get a List of Voices
 
 `ms_list_voice()` performs an HTTP request to the `tts.speech.microsoft.com/cognitiveservices/voices/list` endpoint to get a full list of voices for a specific region. It attaches a region prefix to this endpoint to get a list of voices for that region. 
 
 For example, assuming the `Location/Region` associated with the API key is `westus`, using `ms_list_voice()` will access the `https://westus.tts.speech.microsoft.com/cognitiveservices/voices/list` endpoint, providing a list of voices exclusively from the `westus` region.
 
-WARNING: Specify the Speech resource region that corresponds to your API Key. Specifying the wrong region to conrad functions will lead to a [HTTP 403 Forbidden response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403).
+**WARNING:** Specify the Speech resource region that corresponds to your API Key. Specifying the wrong region to conrad functions will lead to a [HTTP 403 Forbidden response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403).
 
 ```{r setup}
 library(conrad)

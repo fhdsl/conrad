@@ -44,7 +44,7 @@ If the deployment was successful, you should see **Your deployment is complete**
 
 Once you complete these steps, you have successfully retrieved your API keys to access the API. 
 
-WARNING: Remember your `Location/Region`, which you use to make calls to the API. Specifying a different region to conrad functions will lead to a [HTTP 403 Forbidden response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403).
+**WARNING:** Remember your `Location/Region`, which you use to make calls to the API. Specifying a different region to conrad functions will lead to a [HTTP 403 Forbidden response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403).
 
 
 ## Setting your API key
