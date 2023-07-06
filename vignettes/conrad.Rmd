@@ -25,7 +25,7 @@ knitr::opts_chunk$set(
 
 This vignette introduces you to conrad's functions for speech synthesis with Microsoft Azure's [Text to Speech REST API](https://learn.microsoft.com/en-us/azure/cognitive-services/Speech-Service/rest-text-to-speech?tabs=streaming). Also, it contains several [examples][Examples] of audio output demonstrating synthesized speech.  The API enables neural text to speech voices, which support specific languages and dialects that are identified by locale. Each available endpoint is associated with a region.
 
-To utilize the Speech service, you must register an account on the Microsoft Azure Cognitive Services and obtain an API Key. Without one, this package will not work. Please refer to the API Key vignette for guidance.
+To utilize the Speech service, you must register an account on the Microsoft Azure Cognitive Services and obtain an API Key. Without one, this package will not work. Please refer to the [API Key vignette](http://hutchdatascience.org/conrad/articles/api-key.html) for guidance.
 
 ## Get a list of voices
 

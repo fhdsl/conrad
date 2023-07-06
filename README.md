@@ -75,6 +75,9 @@ to the API. Specifying a different region will lead to a [HTTP 403
 Forbidden
 response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403).
 
+For more detailed information on each step, refer to the [API Key
+vignette](http://hutchdatascience.org/conrad/articles/api-key.html).
+
 ## Setting your API key
 
 You can set your API key in a number of ways:
