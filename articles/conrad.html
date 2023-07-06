@@ -94,7 +94,7 @@ Microsoft Azure Cognitive Services and obtain an API Key. Without one,
 this package will not work. Please refer to the <a href="http://hutchdatascience.org/conrad/articles/api-key.html">API Key
 vignette</a> for guidance.</p>
 <div class="section level2">
-<h2 id="get-a-list-of-voices">Get a list of voices<a class="anchor" aria-label="anchor" href="#get-a-list-of-voices"></a>
+<h2 id="get-a-list-of-voices">Get a List of Voices<a class="anchor" aria-label="anchor" href="#get-a-list-of-voices"></a>
 </h2>
 <p><code><a href="../reference/ms_list_voice.html">ms_list_voice()</a></code> performs an HTTP request to the
 <code>tts.speech.microsoft.com/cognitiveservices/voices/list</code>
@@ -107,9 +107,9 @@ with the API key is <code>westus</code>, using
 <code>https://westus.tts.speech.microsoft.com/cognitiveservices/voices/list</code>
 endpoint, providing a list of voices exclusively from the
 <code>westus</code> region.</p>
-<p>WARNING: Specify the Speech resource region that corresponds to your
-API Key. Specifying the wrong region to conrad functions will lead to a
-<a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403" class="external-link">HTTP
+<p><strong>WARNING:</strong> Specify the Speech resource region that
+corresponds to your API Key. Specifying the wrong region to conrad
+functions will lead to a <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403" class="external-link">HTTP
 403 Forbidden response</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/fhdsl/conrad" class="external-link">conrad</a></span><span class="op">)</span></span>
