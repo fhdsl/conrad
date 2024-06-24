@@ -5,7 +5,7 @@ Authors@R: c(
     person("Howard", "Baek", email = "howardbaek.fh@gmail.com", role = c("aut", "cre", "cph"),
            comment = c(ORCID = "0009-0000-8942-1618")),
     person("John", "Muschelli", email = "muschellij2@gmail.com", role = c("aut"),
-           comment = c(ORCID = "0009-0000-8942-1618"))
+           comment = c(ORCID = "0000-0001-6469-1750"))
            )
 Description: Convert text into synthesized speech and get a list of supported voices for a region. 
     Microsoft's 'Cognitive Services Text to Speech REST' API <https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-text-to-speech?tabs=streaming>  
@@ -16,7 +16,7 @@ BugReports: https://github.com/fhdsl/conrad/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.1
 Depends: 
     R (>= 2.10)
 LazyData: true
