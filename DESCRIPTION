@@ -11,12 +11,12 @@ Description: Convert text into synthesized speech and get a list of supported vo
     Microsoft's 'Cognitive Services Text to Speech REST' API <https://learn.microsoft.com/en-us/azure/cognitive-services/speech-service/rest-text-to-speech?tabs=streaming>  
     supports neural text to speech voices, which support specific languages and dialects that are identified by locale. 
 URL: https://github.com/fhdsl/conrad,
-    http://hutchdatascience.org/conrad/
+    https://hutchdatascience.org/conrad/
 BugReports: https://github.com/fhdsl/conrad/issues
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Depends: 
     R (>= 2.10)
 LazyData: true
