@@ -35,7 +35,7 @@ For example, assuming the `Location/Region` associated with the API key is `west
 
 **WARNING:** Specify the Speech resource region that corresponds to your API Key. Specifying the wrong region to conrad functions will lead to a [HTTP 403 Forbidden response](https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/403).
 
-```{r setup}
+```{r setup, eval = FALSE}
 library(conrad)
 list_voice <- ms_list_voice(region = "westus")
 head(list_voice[c(1:7)], 3)
