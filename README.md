@@ -25,9 +25,8 @@ Each available endpoint is associated with a region.
 
 Before you use the text to speech REST API, a valid account must be
 registered at the [Microsoft Azure Cognitive
-Services](https://azure.microsoft.com/en-us/free/cognitive-services/)
-and you must obtain an API key. Without an API key, this package will
-not work.
+Services](https://azure.microsoft.com/en-us/free/ai-services/) and you
+must obtain an API key. Without an API key, this package will not work.
 
 ## Installation
 
